@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matteo Pasero Marketing</title>
+<meta name="description" content="Non un'agenzia. Un professionista dedicato, che segue la tua pubblicità dall'inizio alla fine. Massimo 5 clienti alla volta, per scelta.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black:   #0e0e0e;
+    --off:     #f7f5f0;
+    --cream:   #ede9e1;
+    --gold:    #c9a84c;
+    --gold-dk: #a07830;
+    --gold-lt: #e8d08a;
+    --mid:     #6b6355;
+    --light:   #b0a898;
+    --border:  rgba(201,168,76,0.25);
+    --borderl: rgba(0,0,0,0.08);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--off);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── UTILS ── */
+  .gold { color: var(--gold); }
+  .section-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.9rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .section-eyebrow::before {
+    content: ''; display: block;
+    width: 20px; height: 2px; background: var(--gold);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.1rem 3rem;
+    background: rgba(247,245,240,0.96);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--borderl);
+  }
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 1.15rem;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--black);
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-cta {
+    background: var(--black); color: var(--off);
+    padding: 0.6rem 1.5rem; border-radius: 2px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem; font-weight: 700;
+    text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--black); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; gap: 5rem;
+    padding: 10rem 3rem 6rem;
+    max-width: 1160px; margin: 0 auto;
+  }
+  .hero-left {}
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--cream); border: 1px solid var(--border);
+    padding: 0.4rem 1rem; border-radius: 2px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--mid); margin-bottom: 2rem;
+  }
+  .hero-tag::before {
+    content: ''; width: 7px; height: 7px;
+    background: #5cb85c; border-radius: 50%;
+    animation: blink 2.5s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.2} }
+
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; text-transform: uppercase;
+    font-size: clamp(3rem, 5.5vw, 5rem);
+    line-height: 0.92; letter-spacing: -0.01em;
+    color: var(--black); margin-bottom: 1.4rem;
+  }
+  .hero h1 .line-gold { color: var(--gold); display: block; }
+
+  .hero-sub {
+    font-size: 1.05rem; color: var(--mid);
+    line-height: 1.8; max-width: 420px;
+    margin-bottom: 2.2rem; font-weight: 400;
+  }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: var(--black);
+    padding: 0.9rem 2.2rem; border-radius: 2px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem; font-weight: 700;
+    text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em;
+    transition: background 0.2s, transform 0.1s; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-dk); transform: translateY(-1px); }
+  .btn-ghost {
+    color: var(--mid); font-size: 0.88rem;
+    text-decoration: none; border-bottom: 1px solid var(--light);
+    padding-bottom: 2px; transition: color 0.15s, border-color 0.15s;
+  }
+  .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* Hero right — card stack */
+  .hero-right { display: flex; flex-direction: column; gap: 1rem; }
+  .hero-card {
+    background: #fff;
+    border: 1px solid var(--borderl);
+    border-radius: 6px; padding: 1.4rem 1.6rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  }
+  .hero-card.gold-accent { border-left: 3px solid var(--gold); }
+  .hc-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.5rem;
+  }
+  .hc-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 1.5rem;
+    text-transform: uppercase; color: var(--black);
+    line-height: 1.1; margin-bottom: 0.3rem;
+  }
+  .hc-body { font-size: 0.85rem; color: var(--mid); line-height: 1.6; font-weight: 400; }
+  .hc-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .hc-stat {}
+  .hc-stat .num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 1.8rem;
+    color: var(--black); line-height: 1;
+  }
+  .hc-stat .num em { font-style: normal; color: var(--gold); }
+  .hc-stat .lbl { font-size: 0.72rem; color: var(--light); margin-top: 0.2rem; line-height: 1.3; }
+
+  /* ── STRIP ── */
+  .strip {
+    background: var(--black); color: var(--off);
+    padding: 1.4rem 3rem;
+    display: flex; align-items: center; gap: 3rem;
+    overflow: hidden;
+  }
+  .strip-item {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    white-space: nowrap; display: flex; align-items: center; gap: 0.6rem;
+  }
+  .strip-item::before { content: '▶'; color: var(--gold); font-size: 0.6rem; }
+  .strip-sep { color: rgba(255,255,255,0.15); }
+
+  /* ── PROBLEMA ── */
+  .problema {
+    padding: 7rem 3rem;
+    max-width: 1000px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .problema h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; text-transform: uppercase;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1; color: var(--black); margin-bottom: 1.2rem;
+  }
+  .problema h2 em { font-style: normal; color: var(--gold); }
+  .problema-text { font-size: 0.95rem; color: var(--mid); line-height: 1.8; margin-bottom: 1.5rem; }
+  .problema-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+  .problema-list li {
+    display: flex; gap: 0.8rem; align-items: flex-start;
+    font-size: 0.9rem; color: var(--mid); line-height: 1.5;
+  }
+  .problema-list li::before {
+    content: ''; width: 16px; height: 16px;
+    border-radius: 50%; background: var(--cream);
+    border: 1px solid var(--border);
+    flex-shrink: 0; margin-top: 0.15rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pill-grid { display: flex; flex-direction: column; gap: 1rem; }
+  .pill {
+    background: #fff; border: 1px solid var(--borderl);
+    border-radius: 6px; padding: 1.2rem 1.4rem;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+    display: flex; align-items: flex-start; gap: 1rem;
+  }
+  .pill-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .pill h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem; font-weight: 800;
+    text-transform: uppercase; margin-bottom: 0.2rem;
+  }
+  .pill p { font-size: 0.82rem; color: var(--mid); line-height: 1.55; }
+
+  /* ── MATTEO ── */
+  .matteo {
+    background: var(--black); color: var(--off);
+    padding: 7rem 3rem;
+    position: relative; overflow: hidden;
+  }
+  .matteo::after {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .matteo-inner {
+    max-width: 1000px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    position: relative; z-index: 1;
+  }
+  .matteo h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; text-transform: uppercase;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1; margin-bottom: 1.2rem;
+  }
+  .matteo h2 em { font-style: normal; color: var(--gold); }
+  .matteo-text { font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.85; margin-bottom: 1.8rem; }
+  .matteo-quote {
+    border-left: 2px solid var(--gold);
+    padding-left: 1.2rem; margin-top: 1.5rem;
+    font-style: italic; font-size: 0.95rem;
+    color: rgba(255,255,255,0.75); line-height: 1.7;
+  }
+  .matteo-quote cite {
+    display: block; margin-top: 0.6rem;
+    font-style: normal; font-size: 0.75rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .pilastri { display: flex; flex-direction: column; gap: 1px; }
+  .pilastro {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px; padding: 1.4rem 1.6rem;
+    margin-bottom: 0.8rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .pilastro:hover { border-color: var(--border); background: rgba(255,255,255,0.06); }
+  .pilastro-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.4rem;
+  }
+  .pilastro h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem; font-weight: 800;
+    text-transform: uppercase; margin-bottom: 0.4rem;
+  }
+  .pilastro p { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  /* ── 5 CLIENTI ── */
+  .cinque {
+    padding: 7rem 3rem;
+    background: var(--cream);
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cinque-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+  .cinque-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; text-transform: uppercase;
+    font-size: clamp(5rem, 12vw, 10rem);
+    line-height: 1; color: var(--gold);
+    opacity: 0.25; position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    pointer-events: none; white-space: nowrap;
+    z-index: 0;
+  }
+  .cinque h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; text-transform: uppercase;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1; color: var(--black); margin-bottom: 1.2rem;
+  }
+  .cinque h2 em { font-style: normal; color: var(--gold); }
+  .cinque-text {
+    font-size: 1rem; color: var(--mid);
+    line-height: 1.85; margin-bottom: 2.5rem;
+    max-width: 580px; margin-left: auto; margin-right: auto;
+  }
+  .cinque-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; text-align: left;
+  }
+  .cinque-card {
+    background: #fff; border: 1px solid var(--borderl);
+    border-radius: 6px; padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .cinque-card .icon { font-size: 1.4rem; margin-bottom: 0.8rem; }
+  .cinque-card h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem; font-weight: 800;
+    text-transform: uppercase; margin-bottom: 0.4rem;
+    color: var(--black);
+  }
+  .cinque-card p { font-size: 0.82rem; color: var(--mid); line-height: 1.6; }
+
+  /* ── COME LAVORO ── */
+  .come {
+    padding: 7rem 3rem;
+    max-width: 1000px; margin: 0 auto;
+  }
+  .come h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; text-transform: uppercase;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1; margin-bottom: 0.8rem;
+  }
+  .come-sub { font-size: 0.95rem; color: var(--mid); max-width: 560px; margin-bottom: 3.5rem; line-height: 1.75; }
+  .fasi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--borderl); border-radius: 6px; overflow: hidden; }
+  .fase {
+    background: #fff; padding: 2rem 1.5rem;
+    position: relative;
+  }
+  .fase::before {
+    content: attr(data-n);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 4rem;
+    color: var(--cream); line-height: 1;
+    position: absolute; top: 1rem; right: 1rem;
+  }
+  .fase-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .fase h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem; font-weight: 800;
+    text-transform: uppercase; margin-bottom: 0.5rem; color: var(--black);
+  }
+  .fase p { font-size: 0.82rem; color: var(--mid); line-height: 1.6; }
+
+  /* ── CONTRATTO ── */
+  .contratto {
+    background: var(--off);
+    padding: 7rem 3rem;
+    border-top: 1px solid var(--borderl);
+    border-bottom: 1px solid var(--borderl);
+  }
+  .contratto-inner {
+    max-width: 1000px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .contratto h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; text-transform: uppercase;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1; margin-bottom: 1.2rem;
+  }
+  .contratto h2 em { font-style: normal; color: var(--gold); }
+  .contratto-text { font-size: 0.95rem; color: var(--mid); line-height: 1.8; margin-bottom: 2rem; }
+  .contratto-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+  .contratto-list li {
+    display: flex; gap: 0.8rem; align-items: flex-start;
+    font-size: 0.9rem; color: var(--black); line-height: 1.5;
+  }
+  .contratto-list li::before {
+    content: '▶'; color: var(--gold);
+    font-size: 0.55rem; flex-shrink: 0; margin-top: 0.3rem;
+  }
+  .compare {
+    background: #fff; border: 1px solid var(--borderl);
+    border-radius: 8px; overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  .compare-head {
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  .ch-col {
+    padding: 0.9rem 1.2rem; text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .ch-them { background: var(--cream); color: var(--mid); }
+  .ch-me { background: var(--gold); color: var(--black); }
+  .compare-row {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--borderl);
+  }
+  .cr-cell {
+    padding: 0.9rem 1.2rem; font-size: 0.82rem;
+    line-height: 1.4;
+  }
+  .cr-them { color: var(--light); background: #fafaf8; }
+  .cr-them span { text-decoration: line-through; }
+  .cr-me { color: var(--black); font-weight: 500; background: #fff; }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--black);
+    padding: 8rem 3rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center bottom, rgba(201,168,76,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .cta-section > * { position: relative; z-index: 1; }
+  .cta-section h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; text-transform: uppercase;
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    line-height: 0.95; color: var(--off);
+    margin-bottom: 1.2rem;
+  }
+  .cta-section h2 em { font-style: normal; color: var(--gold); }
+  .cta-section p {
+    font-size: 1rem; color: rgba(255,255,255,0.5);
+    max-width: 480px; margin: 0 auto 2.5rem;
+    line-height: 1.75;
+  }
+  .btn-cta {
+    background: var(--gold); color: var(--black);
+    padding: 1.1rem 3rem; border-radius: 2px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem; font-weight: 700;
+    text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em;
+    display: inline-block; transition: background 0.2s, transform 0.1s;
+  }
+  .btn-cta:hover { background: var(--gold-lt); transform: translateY(-2px); }
+  .cta-note { display: block; margin-top: 1.2rem; font-size: 0.78rem; color: rgba(255,255,255,0.25); letter-spacing: 0.04em; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black); border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 2rem 3rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 0.95rem;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.25); margin-top: 0.2rem; }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a {
+    font-size: 0.78rem; color: rgba(255,255,255,0.35);
+    text-decoration: none; transition: color 0.15s;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero, .problema, .matteo-inner, .contratto-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero { padding: 8rem 1.5rem 4rem; min-height: auto; }
+    .fasi { grid-template-columns: 1fr 1fr; }
+    .cinque-cards { grid-template-columns: 1fr; }
+    .strip { gap: 1.5rem; flex-wrap: wrap; }
+    .come, .cinque, .contratto, .cta-section { padding: 5rem 1.5rem; }
+    .problema { padding: 5rem 1.5rem; }
+    .matteo { padding: 5rem 1.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+    .hc-stats { grid-template-columns: repeat(3,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Matteo Pasero <span>Marketing</span></div>
+  <a href="https://calendly.com/matteo-pasero-adv/30min" class="nav-cta" target="_blank">Parliamo delle tue campagne →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Disponibile per nuovi clienti</div>
+    <h1>
+      La pubblicità<br>
+      che porta<br>
+      <span class="line-gold">clienti veri.</span>
+    </h1>
+    <p class="hero-sub">Seguo ogni tua campagna dall'inizio alla fine, da solo, senza delegare nulla a nessuno. Perché la tua attività merita attenzione vera, non un numero di ticket.</p>
+    <div class="hero-actions">
+      <a href="https://calendly.com/matteo-pasero-adv/30min" class="btn-primary" target="_blank">▶ Prenota una call gratuita</a>
+      <a href="#matteo" class="btn-ghost">Scopri come lavoro</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card gold-accent">
+      <div class="hc-label">Il metodo in numeri</div>
+      <div class="hc-stats">
+        <div class="hc-stat">
+          <div class="num">3<em>mesi</em></div>
+          <div class="lbl">per vedere risultati concreti</div>
+        </div>
+        <div class="hc-stat">
+          <div class="num">5<em>max</em></div>
+          <div class="lbl">clienti seguiti in contemporanea</div>
+        </div>
+        <div class="hc-stat">
+          <div class="num">1<em>ref.</em></div>
+          <div class="lbl">interlocutore unico, sempre Matteo</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hc-label">Cosa faccio io che le agenzie non fanno</div>
+      <div class="hc-title">Tutto, da solo.</div>
+      <div class="hc-body">Analisi, strategia, testi, grafiche e gestione delle campagne. Nessun subappalto, nessun passaggio di consegne. Solo io e il tuo progetto.</div>
+    </div>
+    <div class="hero-card gold-accent">
+      <div class="hc-label">Per chi fa già pubblicità sui social</div>
+      <div class="hc-body">Le richieste arrivano ma poche si trasformano in clienti? <strong>Il problema è quasi sempre la strategia dietro le campagne</strong> — non il budget.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-item">Analisi dell'attività</div>
+  <div class="strip-sep">·</div>
+  <div class="strip-item">Strategia su misura</div>
+  <div class="strip-sep">·</div>
+  <div class="strip-item">Testi e grafiche</div>
+  <div class="strip-sep">·</div>
+  <div class="strip-item">Gestione campagne</div>
+  <div class="strip-sep">·</div>
+  <div class="strip-item">Report mensile</div>
+  <div class="strip-sep">·</div>
+  <div class="strip-item">Un solo referente</div>
+</div>
+
+<!-- PROBLEMA -->
+<section class="problema" id="problema">
+  <div>
+    <div class="section-eyebrow">Il problema delle agenzie</div>
+    <h2>Tanti clienti,<br><em>poca attenzione.</em></h2>
+    <p class="problema-text">Le agenzie di marketing devono fare numero per stare in piedi. Più clienti gestiscono, più ricavi hanno. Il risultato è che il tuo account viene affidato a un collaboratore, spesso esterno, che non conosce la tua attività e non ha il tempo per approfondirla.</p>
+    <p class="problema-text">Cambi referente senza preavviso, ripeti il briefing da capo, i risultati calano — e nessuno ti spiega perché. Non è cattiveria: è un modello di business che mette il volume davanti alla qualità.</p>
+  </div>
+  <div class="pill-grid">
+    <div class="pill">
+      <div class="pill-icon">🔄</div>
+      <div>
+        <h4>Il lavoro viene subappaltato</h4>
+        <p>Le campagne vengono spesso gestite da freelance o collaboratori esterni, lontani dal tuo progetto e dalla tua storia.</p>
+      </div>
+    </div>
+    <div class="pill">
+      <div class="pill-icon">👤</div>
+      <div>
+        <h4>Non sai mai chi lavora sul tuo account</h4>
+        <p>Il referente che ti ha convinto a firmare raramente è quello che poi segue le campagne giorno per giorno.</p>
+      </div>
+    </div>
+    <div class="pill">
+      <div class="pill-icon">📉</div>
+      <div>
+        <h4>L'attenzione si diluisce nel tempo</h4>
+        <p>I primi mesi sembrano promettenti. Poi il tuo progetto diventa uno dei tanti e i risultati si assestano senza migliorare.</p>
+      </div>
+    </div>
+    <div class="pill">
+      <div class="pill-icon">🔒</div>
+      <div>
+        <h4>Sei vincolato da contratti annuali</h4>
+        <p>Anche quando non sei soddisfatto, uscire ha un costo. E il problema resta irrisolto per mesi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATTEO -->
+<section class="matteo" id="matteo">
+  <div class="matteo-inner">
+    <div>
+      <div class="section-eyebrow" style="color:var(--gold);">Come lavoro io</div>
+      <h2>Dall'analisi<br>alle grafiche.<br><em>Solo io.</em></h2>
+      <p class="matteo-text">Sono un libero professionista e seguo l'intero processo da solo: studio la tua attività, costruisco la strategia, scrivo i testi, realizzo le grafiche e gestisco le campagne. Nessun subappalto, nessuna traduzione del briefing a terzi.</p>
+      <p class="matteo-text">Questo significa che chi conosce il tuo business sono io — dall'inizio alla fine. Quando mi chiami, rispondo io. Quando c'è un problema, lo risolvo io.</p>
+      <blockquote class="matteo-quote">
+        "Non ho bisogno di fare volume. Ho bisogno di lavorare con aziende che credono nel mio metodo, con cui costruire un rapporto stabile e crescere insieme negli anni."
+        <cite>— Matteo Pasero</cite>
+      </blockquote>
+    </div>
+    <div class="pilastri">
+      <div class="pilastro">
+        <div class="pilastro-num">01 — Analisi</div>
+        <h3>Studio la tua attività in profondità</h3>
+        <p>Prima di toccare una campagna, capisco il tuo mercato, i tuoi clienti ideali e cosa ti distingue davvero dalla concorrenza.</p>
+      </div>
+      <div class="pilastro">
+        <div class="pilastro-num">02 — Strategia</div>
+        <h3>Costruisco il percorso su misura</h3>
+        <p>Ogni attività è diversa. La strategia parte dai tuoi obiettivi reali, non da un template standardizzato da agenzia.</p>
+      </div>
+      <div class="pilastro">
+        <div class="pilastro-num">03 — Creatività</div>
+        <h3>Testi e grafiche fatti da me</h3>
+        <p>Scrivo i testi e realizzo le grafiche degli annunci. Il messaggio è coerente, perché chi lo conosce è la stessa persona che lo crea.</p>
+      </div>
+      <div class="pilastro">
+        <div class="pilastro-num">04 — Gestione e crescita</div>
+        <h3>Monitoraggio quotidiano e report chiari</h3>
+        <p>Seguo le campagne ogni giorno e ti presento ogni mese un report con numeri veri: spesa, contatti, clienti acquisiti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 CLIENTI -->
+<section class="cinque" id="cinque">
+  <div class="cinque-num" aria-hidden="true">MAX 5</div>
+  <div class="cinque-inner">
+    <div class="section-eyebrow" style="justify-content:center;">La scelta più importante</div>
+    <h2>Massimo <em>5 clienti</em><br>alla volta.</h2>
+    <p class="cinque-text">Non è un limite, è una scelta. Lavorare con pochi clienti mi permette di dedicare a ognuno il tempo e l'energia che il suo progetto merita davvero. Non ti tratto come un numero da gestire — costruiamo qualcosa insieme, nel tempo.</p>
+    <div class="cinque-cards">
+      <div class="cinque-card">
+        <div class="icon">🎯</div>
+        <h4>Attenzione completa</h4>
+        <p>Il tuo progetto riceve la stessa attenzione al terzo mese che al primo. Perché non ho altri 30 clienti che aspettano.</p>
+      </div>
+      <div class="cinque-card">
+        <div class="icon">🤝</div>
+        <h4>Un rapporto che dura</h4>
+        <p>Cerco aziende con cui costruire una collaborazione stabile nel tempo, non clienti da acquisire e dimenticare.</p>
+      </div>
+      <div class="cinque-card">
+        <div class="icon">📈</div>
+        <h4>Crescita condivisa</h4>
+        <p>Quando la tua attività cresce, cresce anche il mio lavoro con te. I nostri obiettivi sono allineati fin dall'inizio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COME LAVORO -->
+<section class="come" id="processo">
+  <div class="section-eyebrow">Il processo</div>
+  <h2>Quattro fasi,<br>nessuna sorpresa.</h2>
+  <p class="come-sub">Ogni collaborazione parte dallo stesso punto: capire la tua attività. Da lì costruiamo insieme, un passo alla volta.</p>
+  <div class="fasi">
+    <div class="fase" data-n="1">
+      <div class="fase-tag">Analisi</div>
+      <h3>Studio la tua attività</h3>
+      <p>Esamino il tuo mercato, i tuoi clienti e la tua concorrenza. Capisco cosa funziona già e dove c'è margine di crescita.</p>
+    </div>
+    <div class="fase" data-n="2">
+      <div class="fase-tag">Strategia</div>
+      <h3>Definisco il piano</h3>
+      <p>Costruisco la strategia su misura: a chi parlare, con quale messaggio, su quale canale. Obiettivi e numeri condivisi prima di iniziare.</p>
+    </div>
+    <div class="fase" data-n="3">
+      <div class="fase-tag">Creazione</div>
+      <h3>Testi, grafiche e campagne</h3>
+      <p>Realizzo tutto il materiale creativo e lancio le campagne. Ogni elemento è pensato per il tuo cliente ideale, non per un pubblico generico.</p>
+    </div>
+    <div class="fase" data-n="4">
+      <div class="fase-tag">Crescita</div>
+      <h3>Ottimizzazione e report</h3>
+      <p>Monitoro ogni giorno, miglioro le campagne nel tempo e ti presento ogni mese un report chiaro con i numeri che contano.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTRATTO -->
+<section class="contratto" id="accordo">
+  <div class="contratto-inner">
+    <div>
+      <div class="section-eyebrow">L'accordo</div>
+      <h2>Accordi<br><em>trimestrali.</em><br>Libertà reale.</h2>
+      <p class="contratto-text">Le agenzie ti vincolano con contratti annuali perché hanno bisogno di prevedere il fatturato. Io lavoro per trimestri: abbastanza tempo per costruire una strategia seria e vedere i risultati, senza tenerti in ostaggio se le cose non vanno come previsto.</p>
+      <p class="contratto-text">Rinnovi perché sei soddisfatto. Non perché sei obbligato.</p>
+      <ul class="contratto-list">
+        <li>3 mesi per costruire, testare e ottimizzare</li>
+        <li>Rinnovo basato sui risultati, non su un contratto</li>
+        <li>Uscita libera a fine trimestre, sempre</li>
+        <li>Obiettivi e numeri concordati prima di iniziare</li>
+      </ul>
+    </div>
+    <div class="compare">
+      <div class="compare-head">
+        <div class="ch-col ch-them">Agenzie tradizionali</div>
+        <div class="ch-col ch-me">Matteo Pasero</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cell cr-them"><span>Il lavoro viene subappaltato</span></div>
+        <div class="cr-cell cr-me">Tutto fatto da Matteo</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cell cr-them"><span>Molti clienti, attenzione divisa</span></div>
+        <div class="cr-cell cr-me">Massimo 5 clienti alla volta</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cell cr-them"><span>Referente diverso ogni mese</span></div>
+        <div class="cr-cell cr-me">Un solo referente, sempre io</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cell cr-them"><span>Contratto annuale obbligatorio</span></div>
+        <div class="cr-cell cr-me">Accordo trimestrale rinnovabile</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cell cr-them"><span>Penali in caso di uscita</span></div>
+        <div class="cr-cell cr-me">Uscita libera a fine periodo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-eyebrow" style="justify-content:center; color:rgba(201,168,76,0.7);">Iniziamo</div>
+  <h2>Uno dei cinque<br>posti è <em>tuo.</em></h2>
+  <p>Prima call gratuita, nessun impegno. Portami le informazioni sulla tua attività e vediamo insieme se ha senso lavorare insieme.</p>
+  <a href="https://calendly.com/matteo-pasero-adv/30min" class="btn-cta" target="_blank">▶ Prenota la call gratuita</a>
+  <span class="cta-note">Matteo risponde entro 24 ore · I posti disponibili si aggiornano ogni trimestre</span>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Matteo Pasero <span>Marketing</span></div>
+    <div class="footer-copy">© 2025 Matteo Pasero · P.IVA 01757360050</div>
+  </div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/matteopasero.marketing/" target="_blank">Instagram</a>
+    <a href="http://wa.me/+393420161752" target="_blank">WhatsApp</a>
+    <a href="https://www.facebook.com/people/Paso-Adv/61572297794136/" target="_blank">Facebook</a>
+    <a href="https://calendly.com/matteo-pasero-adv/30min" target="_blank">Prenota call</a>
+  </div>
+</footer>
+
+</body>
+</html>
