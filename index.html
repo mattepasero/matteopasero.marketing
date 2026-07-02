@@ -78,8 +78,24 @@
     align-items: center; gap: 5rem;
     padding: 10rem 3rem 6rem;
     max-width: 1160px; margin: 0 auto;
+    position: relative; overflow: hidden;
+    background: repeating-linear-gradient(135deg, rgba(201,168,76,0.05) 0px 1px, transparent 1px 26px), var(--off);
   }
-  .hero-left {}
+  .hero::before {
+    content: '';
+    position: absolute; top: -140px; right: -180px;
+    width: 560px; height: 560px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.14) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -160px; left: -140px;
+    width: 420px; height: 420px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+  .hero-left { position: relative; z-index: 1; }
   .hero-tag {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--cream); border: 1px solid var(--border);
@@ -127,8 +143,44 @@
   }
   .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
 
-  /* Hero right — card stack */
-  .hero-right { display: flex; flex-direction: column; gap: 1rem; }
+  /* Hero right — big cutout photo */
+  .hero-right {
+    position: relative; z-index: 1;
+    align-self: stretch;
+    display: flex; align-items: flex-end; justify-content: center;
+    min-height: 420px;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    top: 6%; right: 2%; bottom: 0; left: 10%;
+    background: linear-gradient(155deg, var(--gold) 0%, var(--gold-dk) 100%);
+    border-radius: 28px;
+    transform: rotate(-5deg);
+    opacity: 0.16;
+    z-index: 0;
+  }
+  .hero-photo-big { position: relative; z-index: 1; width: 100%; max-width: 400px; }
+  .hero-photo-big img {
+    width: 100%; height: auto; display: block;
+    filter: drop-shadow(0 24px 36px rgba(0,0,0,0.18));
+  }
+
+  /* ── INTRO CARDS ── */
+  .intro-cards {
+    padding: 3.5rem 3rem 4.5rem; max-width: 1160px; margin: 0 auto;
+    position: relative; overflow: hidden;
+    background: repeating-linear-gradient(135deg, rgba(201,168,76,0.05) 0px 1px, transparent 1px 26px), var(--off);
+  }
+  .intro-cards::before {
+    content: '';
+    position: absolute; top: -60px; left: -100px;
+    width: 380px; height: 380px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+  .intro-cards-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .intro-cards-grid .full-span { grid-column: 1 / -1; }
   .hero-card {
     background: #fff;
     border: 1px solid var(--borderl);
@@ -159,28 +211,40 @@
   .hc-stat .num em { font-style: normal; color: var(--gold); }
   .hc-stat .lbl { font-size: 0.72rem; color: var(--light); margin-top: 0.2rem; line-height: 1.3; }
 
-  /* ── STRIP ── */
-  .strip {
+  /* ── METRICHE ── */
+  .metriche {
     background: var(--black); color: var(--off);
-    padding: 1.4rem 3rem;
-    display: flex; align-items: center; gap: 3rem;
-    overflow: hidden;
+    padding: 2.2rem 3rem;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1rem; max-width: 1160px; margin: 0 auto;
   }
-  .strip-item {
+  .metrica { text-align: center; border-left: 1px solid rgba(255,255,255,0.08); padding-left: 1rem; }
+  .metrica:first-child { border-left: none; padding-left: 0; }
+  .metrica-num {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.8rem; font-weight: 700;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    white-space: nowrap; display: flex; align-items: center; gap: 0.6rem;
+    font-weight: 900; font-size: clamp(1.8rem, 3vw, 2.4rem);
+    line-height: 1; color: var(--off);
   }
-  .strip-item::before { content: '▶'; color: var(--gold); font-size: 0.6rem; }
-  .strip-sep { color: rgba(255,255,255,0.15); }
+  .metrica-num em { font-style: normal; color: var(--gold); }
+  .metrica-lbl { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-top: 0.5rem; line-height: 1.4; }
 
   /* ── PROBLEMA ── */
   .problema {
     padding: 7rem 3rem;
     max-width: 1000px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    position: relative; overflow: hidden;
+    border-top: 1px solid var(--border);
+    background: repeating-linear-gradient(135deg, rgba(201,168,76,0.05) 0px 1px, transparent 1px 26px), var(--off);
   }
+  .problema::before {
+    content: '';
+    position: absolute; top: -100px; right: -120px;
+    width: 420px; height: 420px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.13) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+  .problema > div { position: relative; z-index: 1; }
   .problema h2 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900; text-transform: uppercase;
@@ -280,7 +344,7 @@
   /* ── 5 CLIENTI ── */
   .cinque {
     padding: 7rem 3rem;
-    background: var(--cream);
+    background: repeating-linear-gradient(135deg, rgba(201,168,76,0.05) 0px 1px, transparent 1px 26px), var(--cream);
     text-align: center;
     position: relative; overflow: hidden;
   }
@@ -325,53 +389,25 @@
   }
   .cinque-card p { font-size: 0.82rem; color: var(--mid); line-height: 1.6; }
 
-  /* ── COME LAVORO ── */
-  .come {
-    padding: 7rem 3rem;
-    max-width: 1000px; margin: 0 auto;
-  }
-  .come h2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900; text-transform: uppercase;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    line-height: 1; margin-bottom: 0.8rem;
-  }
-  .come-sub { font-size: 0.95rem; color: var(--mid); max-width: 560px; margin-bottom: 3.5rem; line-height: 1.75; }
-  .fasi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--borderl); border-radius: 6px; overflow: hidden; }
-  .fase {
-    background: #fff; padding: 2rem 1.5rem;
-    position: relative;
-  }
-  .fase::before {
-    content: attr(data-n);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900; font-size: 4rem;
-    color: var(--cream); line-height: 1;
-    position: absolute; top: 1rem; right: 1rem;
-  }
-  .fase-tag {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.65rem; font-weight: 700;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 0.8rem;
-  }
-  .fase h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem; font-weight: 800;
-    text-transform: uppercase; margin-bottom: 0.5rem; color: var(--black);
-  }
-  .fase p { font-size: 0.82rem; color: var(--mid); line-height: 1.6; }
-
   /* ── CONTRATTO ── */
   .contratto {
-    background: var(--off);
+    background: repeating-linear-gradient(135deg, rgba(201,168,76,0.05) 0px 1px, transparent 1px 26px), var(--off);
     padding: 7rem 3rem;
-    border-top: 1px solid var(--borderl);
-    border-bottom: 1px solid var(--borderl);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative; overflow: hidden;
+  }
+  .contratto::before {
+    content: '';
+    position: absolute; bottom: -120px; left: -100px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
   }
   .contratto-inner {
     max-width: 1000px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    position: relative; z-index: 1;
   }
   .contratto h2 {
     font-family: 'Barlow Condensed', sans-serif;
@@ -417,6 +453,63 @@
   .cr-them { color: var(--light); background: #fafaf8; }
   .cr-them span { text-decoration: line-through; }
   .cr-me { color: var(--black); font-weight: 500; background: #fff; }
+
+  /* ── RISULTATI ── */
+  .risultati {
+    padding: 7rem 3rem; max-width: 1160px; margin: 0 auto;
+    position: relative; overflow: hidden;
+    background: repeating-linear-gradient(135deg, rgba(201,168,76,0.05) 0px 1px, transparent 1px 26px), var(--cream);
+  }
+  .risultati::before {
+    content: '';
+    position: absolute; top: -90px; left: 40%;
+    width: 460px; height: 460px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.14) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+  .risultati-head, .risultati-grid { position: relative; z-index: 1; }
+  .risultati-head { text-align: center; max-width: 620px; margin: 0 auto 3.5rem; }
+  .risultati-head .section-eyebrow { justify-content: center; }
+  .risultati-head h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; text-transform: uppercase;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1; color: var(--black); margin-bottom: 1rem;
+  }
+  .risultati-head h2 em { font-style: normal; color: var(--gold); }
+  .risultati-head p { font-size: 0.95rem; color: var(--mid); line-height: 1.75; }
+  .risultati-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .risultato-card {
+    background: #fff; border: 1px solid var(--borderl);
+    border-radius: 8px; padding: 1.7rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    display: flex; flex-direction: column; gap: 0.9rem;
+  }
+  .risultato-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.66rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .risultato-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 1.2rem;
+    text-transform: uppercase; color: var(--black); line-height: 1.12;
+  }
+  .risultato-card p { font-size: 0.82rem; color: var(--mid); line-height: 1.55; }
+  .risultato-quote {
+    background: var(--black); color: rgba(255,255,255,0.9);
+    border-radius: 6px; padding: 0.8rem 0.95rem;
+    font-size: 0.78rem; font-style: italic; line-height: 1.5;
+    margin-top: auto;
+  }
+  .risultato-quote cite {
+    display: block; margin-top: 0.5rem;
+    font-style: normal; font-size: 0.66rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold);
+  }
 
   /* ── CTA ── */
   .cta-section {
@@ -485,10 +578,15 @@
     nav { padding: 1rem 1.5rem; }
     .hero, .problema, .matteo-inner, .contratto-inner { grid-template-columns: 1fr; gap: 3rem; }
     .hero { padding: 8rem 1.5rem 4rem; min-height: auto; }
-    .fasi { grid-template-columns: 1fr 1fr; }
+    .hero-right { min-height: 280px; order: -1; }
+    .hero-photo-big { max-width: 240px; }
+    .intro-cards { padding: 2.5rem 1.5rem 0; }
+    .intro-cards-grid { grid-template-columns: 1fr; }
     .cinque-cards { grid-template-columns: 1fr; }
-    .strip { gap: 1.5rem; flex-wrap: wrap; }
-    .come, .cinque, .contratto, .cta-section { padding: 5rem 1.5rem; }
+    .metriche { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .metrica:nth-child(3) { border-left: none; padding-left: 0; }
+    .cinque, .contratto, .cta-section, .risultati { padding: 5rem 1.5rem; }
+    .risultati-grid { grid-template-columns: 1fr; }
     .problema { padding: 5rem 1.5rem; }
     .matteo { padding: 5rem 1.5rem; }
     footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
@@ -501,76 +599,199 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Matteo Pasero <span>Marketing</span></div>
-  <a href="https://calendly.com/matteo-pasero-adv/30min" class="nav-cta" target="_blank">Parliamo delle tue campagne →</a>
+  <a href="https://calendar.app.google/CfDNrTWztkmmq8fr8" class="nav-cta" target="_blank">Parliamo delle tue campagne →</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-tag">Disponibile per nuovi clienti</div>
+    <div class="hero-tag">Poche disponibilità per il prossimo trimestre</div>
     <h1>
       La pubblicità<br>
       che porta<br>
       <span class="line-gold">clienti veri.</span>
     </h1>
-    <p class="hero-sub">Seguo ogni tua campagna dall'inizio alla fine, da solo, senza delegare nulla a nessuno. Perché la tua attività merita attenzione vera, non un numero di ticket.</p>
+    <p class="hero-sub">Seguo ogni cliente in ogni fase del progetto in prima persona. Il mio unico obiettivo è gestire progetti a lungo termine collaborando con aziende per vincere insieme.</p>
     <div class="hero-actions">
-      <a href="https://calendly.com/matteo-pasero-adv/30min" class="btn-primary" target="_blank">▶ Prenota una call gratuita</a>
+      <a href="https://calendar.app.google/CfDNrTWztkmmq8fr8" class="btn-primary" target="_blank">▶ Prenota una call gratuita</a>
       <a href="#matteo" class="btn-ghost">Scopri come lavoro</a>
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-card gold-accent">
-      <div class="hc-label">Il metodo in numeri</div>
+    <div class="hero-photo-big"><img src="matteo.png" alt="Matteo Pasero"></div>
+  </div>
+</section>
+
+<!-- INTRO CARDS -->
+<section class="intro-cards">
+  <div class="intro-cards-grid">
+    <div class="hero-card gold-accent full-span">
+      <div class="hc-label">Il mio metodo in numeri</div>
       <div class="hc-stats">
         <div class="hc-stat">
           <div class="num">3<em>mesi</em></div>
-          <div class="lbl">per vedere risultati concreti</div>
+          <div class="lbl">niente vincoli annuali, bastano 3 mesi per vedere i risultati</div>
         </div>
         <div class="hc-stat">
-          <div class="num">5<em>max</em></div>
-          <div class="lbl">clienti seguiti in contemporanea</div>
+          <div class="num">5<em>alla volta</em></div>
+          <div class="lbl">seguo massimo 5 clienti alla volta, per dedicare le mie energie ad ogni progetto</div>
         </div>
         <div class="hc-stat">
-          <div class="num">1<em>ref.</em></div>
-          <div class="lbl">interlocutore unico, sempre Matteo</div>
+          <div class="num">1<em>referente</em></div>
+          <div class="lbl">interlocutore unico, sarò sempre l'unica persona dietro al progetto</div>
         </div>
       </div>
     </div>
     <div class="hero-card">
-      <div class="hc-label">Cosa faccio io che le agenzie non fanno</div>
-      <div class="hc-title">Tutto, da solo.</div>
-      <div class="hc-body">Analisi, strategia, testi, grafiche e gestione delle campagne. Nessun subappalto, nessun passaggio di consegne. Solo io e il tuo progetto.</div>
+      <div class="hc-label">I vantaggi di un professionista dedicato.</div>
+      <div class="hc-title">Avrai il mio numero diretto.</div>
+      <div class="hc-body">Nessun subappalto, nessun passaggio di consegne. Sarò il tuo unico referente per l'intero progetto e mi occuperò in prima persona di tutto: analisi, strategia, testi, grafiche e gestione delle campagne.</div>
     </div>
     <div class="hero-card gold-accent">
-      <div class="hc-label">Per chi fa già pubblicità sui social</div>
-      <div class="hc-body">Le richieste arrivano ma poche si trasformano in clienti? <strong>Il problema è quasi sempre la strategia dietro le campagne</strong> — non il budget.</div>
+      <div class="hc-label">Per chi fa già lead generation</div>
+      <div class="hc-body">I lead arrivano ma poche si trasformano in clienti? Capiamo insieme dov'è il nodo delle campagne, prenota una call gratuita oggi.</div>
     </div>
   </div>
 </section>
 
-<!-- STRIP -->
-<div class="strip">
-  <div class="strip-item">Analisi dell'attività</div>
-  <div class="strip-sep">·</div>
-  <div class="strip-item">Strategia su misura</div>
-  <div class="strip-sep">·</div>
-  <div class="strip-item">Testi e grafiche</div>
-  <div class="strip-sep">·</div>
-  <div class="strip-item">Gestione campagne</div>
-  <div class="strip-sep">·</div>
-  <div class="strip-item">Report mensile</div>
-  <div class="strip-sep">·</div>
-  <div class="strip-item">Un solo referente</div>
+<!-- METRICHE -->
+<div class="metriche">
+  <div class="metrica">
+    <div class="metrica-num">300.000€<em>+</em></div>
+    <div class="metrica-lbl">valore generato ogni mese dalle mie campagne</div>
+  </div>
+  <div class="metrica">
+    <div class="metrica-num">-60<em>%</em></div>
+    <div class="metrica-lbl">di riduzione sul costo per contatto su chi faceva già lead generation</div>
+  </div>
+  <div class="metrica">
+    <div class="metrica-num">4<em>€</em></div>
+    <div class="metrica-lbl">generati per ogni euro investito nelle mie campagne</div>
+  </div>
+  <div class="metrica">
+    <div class="metrica-num">6,50<em>€</em></div>
+    <div class="metrica-lbl">costo medio per contatto dei miei clienti attivi oggi</div>
+  </div>
 </div>
+
+<!-- RISULTATI -->
+<section class="risultati" id="risultati">
+  <div class="risultati-head">
+    <div class="section-eyebrow">I risultati dei progetti</div>
+    <h2>Faccio parlare <em>i numeri</em><br>e i miei clienti.</h2>
+    <p>Ogni riquadro corrisponde ad un progetto, con un problema reale risolto prima di lanciare la prima campagna.</p>
+  </div>
+
+  <div class="risultati-grid">
+    <div class="risultato-card">
+      <div>
+        <div class="risultato-tag">Personalizzazione mezzi commerciali</div>
+        <h3>Una flotta di 10 camion in una settimana</h3>
+      </div>
+      <p>Filippo non ci credeva troppo. Nella prima settimana di campagne è arrivata la richiesta di personalizzare un'intera flotta di 10 mezzi.</p>
+      <div class="risultato-quote">
+        "Ciao... si si ho visto... Cazzarola... 👏👏💪💪👍👍 Li stiamo gestendo da stamattina... ti tengo aggiornato"
+        <cite>— Filippo, personalizzazione mezzi</cite>
+      </div>
+    </div>
+    <div class="risultato-card">
+      <div>
+        <div class="risultato-tag">Compravendita auto tra privati</div>
+        <h3>46 richieste vere in meno di due settimane</h3>
+      </div>
+      <p>Abbiamo testato più di 15 contenuti diversi tra foto e video, tenendo solo quelli che funzionavano davvero. Ogni persona interessata arrivava già con le informazioni utili per essere ricontattata.</p>
+      <div class="risultato-quote">
+        "Non mi aspettavo un riscontro così rapido: in due settimane avevamo già più contatti di quanti riuscissimo a gestire."
+        <cite>— Tony, compravendita auto</cite>
+      </div>
+    </div>
+    <div class="risultato-card">
+      <div>
+        <div class="risultato-tag">Idraulico a Rimini</div>
+        <h3>Da pochi contatti a 5 al giorno</h3>
+      </div>
+      <p>Roberto veniva seguito da un'agenzia che pubblicava qualche post nei gruppi Facebook della sua città. Abbiamo puntato sulla fiducia più che sulla vendita diretta.</p>
+      <div class="risultato-quote">
+        "Dai... è il nostro momento!!!"
+        <cite>— Roberto, idraulico</cite>
+      </div>
+    </div>
+    <div class="risultato-card">
+      <div>
+        <div class="risultato-tag">Termoidraulica</div>
+        <h3>Costo a contatto quasi dimezzato</h3>
+      </div>
+      <p>Da 50€ a 13€ per ogni persona interessata, con oltre 100.000€ di caldaie vendute in un solo mese.</p>
+      <div class="risultato-quote">
+        "Non capisco molto di pubblicità, ma i numeri li so leggere: il costo per contatto si è quasi dimezzato."
+        <cite>— Fabio S., termoidraulica</cite>
+      </div>
+    </div>
+    <div class="risultato-card">
+      <div>
+        <div class="risultato-tag">Studio dentistico — evento</div>
+        <h3>Sold out in 13 giorni</h3>
+      </div>
+      <p>Con appena 30€ al giorno di budget, i posti disponibili per l'evento sono finiti in meno di due settimane.</p>
+      <div class="risultato-quote">
+        "Non pensavo saremmo arrivati al tutto esaurito così in fretta. Tredici giorni sono decisamente sopra le aspettative."
+        <cite>— Davide S., studio dentistico</cite>
+      </div>
+    </div>
+    <div class="risultato-card">
+      <div>
+        <div class="risultato-tag">Attrezzature dentali</div>
+        <h3>245 iscritti a meno di 1,50€</h3>
+      </div>
+      <p>Grazie a un webinar gratuito, quasi la metà degli iscritti si è presentata davvero all'appuntamento online.</p>
+      <div class="risultato-quote">
+        "Il volume di richieste è stato importante fin dalla prima settimana, ben oltre quello che gestivamo prima."
+        <cite>— Gabriele Z., attrezzature dentali</cite>
+      </div>
+    </div>
+    <div class="risultato-card">
+      <div>
+        <div class="risultato-tag">Formazione sanitaria</div>
+        <h3>Corso venduto al doppio dei concorrenti</h3>
+      </div>
+      <p>Nonostante il prezzo più alto della concorrenza, per ogni euro investito in pubblicità ne sono tornati quattro.</p>
+      <div class="risultato-quote">
+        "Vendevamo il corso a un prezzo più alto della concorrenza e il ritorno è stato comunque superiore a quattro volte l'investito."
+        <cite>— Edy S., formazione sanitaria</cite>
+      </div>
+    </div>
+    <div class="risultato-card">
+      <div>
+        <div class="risultato-tag">Azienda di serramenti</div>
+        <h3>45 richieste in 14 giorni</h3>
+      </div>
+      <p>Così tante persone interessate che abbiamo dovuto dimezzare il budget per riuscire a gestirle tutte.</p>
+      <div class="risultato-quote">
+        "In due settimane il volume di richieste è stato tale da doverlo ricalibrare, per gestirlo con la qualità giusta."
+        <cite>— Ciro G., azienda di serramenti</cite>
+      </div>
+    </div>
+    <div class="risultato-card">
+      <div>
+        <div class="risultato-tag">Agenzia immobiliare</div>
+        <h3>8 immobili acquisiti in 2 mesi</h3>
+      </div>
+      <p>Con meno di 900€ investiti in totale, l'agenzia ha ampliato il portafoglio in tempi record.</p>
+      <div class="risultato-quote">
+        "In vent'anni di attività non avevo mai visto un ritorno simile con un investimento così contenuto."
+        <cite>— Fabrizio A., agente immobiliare</cite>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PROBLEMA -->
 <section class="problema" id="problema">
   <div>
     <div class="section-eyebrow">Il problema delle agenzie</div>
     <h2>Tanti clienti,<br><em>poca attenzione.</em></h2>
-    <p class="problema-text">Le agenzie di marketing devono fare numero per stare in piedi. Più clienti gestiscono, più ricavi hanno. Il risultato è che il tuo account viene affidato a un collaboratore, spesso esterno, che non conosce la tua attività e non ha il tempo per approfondirla.</p>
-    <p class="problema-text">Cambi referente senza preavviso, ripeti il briefing da capo, i risultati calano — e nessuno ti spiega perché. Non è cattiveria: è un modello di business che mette il volume davanti alla qualità.</p>
+    <p class="problema-text">Le agenzie devono fare numero per stare in piedi: più clienti gestiscono, più fatturano. Il tuo account finisce quasi sempre a un collaboratore esterno che non conosce la tua attività.</p>
+    <p class="problema-text">Cambi referente senza preavviso, ripeti il briefing da capo, i risultati calano e nessuno ti spiega perché. Non è cattiveria — è un modello che mette il volume prima della qualità.</p>
   </div>
   <div class="pill-grid">
     <div class="pill">
@@ -669,42 +890,13 @@
   </div>
 </section>
 
-<!-- COME LAVORO -->
-<section class="come" id="processo">
-  <div class="section-eyebrow">Il processo</div>
-  <h2>Quattro fasi,<br>nessuna sorpresa.</h2>
-  <p class="come-sub">Ogni collaborazione parte dallo stesso punto: capire la tua attività. Da lì costruiamo insieme, un passo alla volta.</p>
-  <div class="fasi">
-    <div class="fase" data-n="1">
-      <div class="fase-tag">Analisi</div>
-      <h3>Studio la tua attività</h3>
-      <p>Esamino il tuo mercato, i tuoi clienti e la tua concorrenza. Capisco cosa funziona già e dove c'è margine di crescita.</p>
-    </div>
-    <div class="fase" data-n="2">
-      <div class="fase-tag">Strategia</div>
-      <h3>Definisco il piano</h3>
-      <p>Costruisco la strategia su misura: a chi parlare, con quale messaggio, su quale canale. Obiettivi e numeri condivisi prima di iniziare.</p>
-    </div>
-    <div class="fase" data-n="3">
-      <div class="fase-tag">Creazione</div>
-      <h3>Testi, grafiche e campagne</h3>
-      <p>Realizzo tutto il materiale creativo e lancio le campagne. Ogni elemento è pensato per il tuo cliente ideale, non per un pubblico generico.</p>
-    </div>
-    <div class="fase" data-n="4">
-      <div class="fase-tag">Crescita</div>
-      <h3>Ottimizzazione e report</h3>
-      <p>Monitoro ogni giorno, miglioro le campagne nel tempo e ti presento ogni mese un report chiaro con i numeri che contano.</p>
-    </div>
-  </div>
-</section>
-
 <!-- CONTRATTO -->
 <section class="contratto" id="accordo">
   <div class="contratto-inner">
     <div>
       <div class="section-eyebrow">L'accordo</div>
       <h2>Accordi<br><em>trimestrali.</em><br>Libertà reale.</h2>
-      <p class="contratto-text">Le agenzie ti vincolano con contratti annuali perché hanno bisogno di prevedere il fatturato. Io lavoro per trimestri: abbastanza tempo per costruire una strategia seria e vedere i risultati, senza tenerti in ostaggio se le cose non vanno come previsto.</p>
+      <p class="contratto-text">Le agenzie ti vincolano con contratti annuali perché devono prevedere il fatturato. Io lavoro per trimestri: il tempo giusto per costruire una strategia seria e vedere i risultati, senza tenerti in ostaggio.</p>
       <p class="contratto-text">Rinnovi perché sei soddisfatto. Non perché sei obbligato.</p>
       <ul class="contratto-list">
         <li>3 mesi per costruire, testare e ottimizzare</li>
@@ -746,8 +938,8 @@
 <section class="cta-section">
   <div class="section-eyebrow" style="justify-content:center; color:rgba(201,168,76,0.7);">Iniziamo</div>
   <h2>Uno dei cinque<br>posti è <em>tuo.</em></h2>
-  <p>Prima call gratuita, nessun impegno. Portami le informazioni sulla tua attività e vediamo insieme se ha senso lavorare insieme.</p>
-  <a href="https://calendly.com/matteo-pasero-adv/30min" class="btn-cta" target="_blank">▶ Prenota la call gratuita</a>
+  <p>Prima call gratuita, senza impegno. Raccontami la tua attività e valutiamo insieme se ha senso collaborare.</p>
+  <a href="https://calendar.app.google/CfDNrTWztkmmq8fr8" class="btn-cta" target="_blank">▶ Prenota la call gratuita</a>
   <span class="cta-note">Matteo risponde entro 24 ore · I posti disponibili si aggiornano ogni trimestre</span>
 </section>
 
@@ -761,7 +953,7 @@
     <a href="https://www.instagram.com/matteopasero.marketing/" target="_blank">Instagram</a>
     <a href="http://wa.me/+393793393533" target="_blank">WhatsApp</a>
     <a href="https://www.facebook.com/people/Paso-Adv/61572297794136/" target="_blank">Facebook</a>
-    <a href="https://calendly.com/matteo-pasero-adv/30min" target="_blank">Prenota call</a>
+    <a href="https://calendar.app.google/CfDNrTWztkmmq8fr8" target="_blank">Prenota call</a>
   </div>
 </footer>
 
