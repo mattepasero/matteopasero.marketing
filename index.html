@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Matteo Pasero Marketing</title>
-<meta name="description" content="Un professionista dedicato, che si dedica alle tue campagne pubblicitarie dall'inizio alla fine.">
+<meta name="description" content="Il partner dedicato per acquisire nuovi clienti: progetto, realizzo e ottimizzo campagne pubblicitarie su Meta e Google con un metodo basato su dati, processi e miglioramento continuo.">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
  <style>
@@ -30,12 +30,12 @@
     --border:  rgba(201,168,76,0.25);
     --borderl: rgba(0,0,0,0.08);
   }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; font-size: 125%; }
   body {
     font-family: 'Barlow', sans-serif;
     background: var(--off);
     color: var(--black);
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.6;
     overflow-x: hidden;
   }
@@ -79,14 +79,14 @@
     transition: background 0.2s;
   }
   .nav-cta:hover { background: var(--gold); color: var(--black); }
+  .nav-cta-short { display: none; }
 
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    display: grid; grid-template-columns: 1fr 1fr;
-    align-items: center; gap: 5rem;
-    padding: 10rem 3rem 6rem;
-    max-width: 1160px; margin: 0 auto;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 8rem 3rem 6rem;
     position: relative; overflow: hidden;
     background: repeating-linear-gradient(135deg, rgba(201,168,76,0.05) 0px 1px, transparent 1px 26px), var(--off);
   }
@@ -104,7 +104,7 @@
     background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
     pointer-events: none; z-index: 0;
   }
-  .hero-left { position: relative; z-index: 1; }
+  .hero-left { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; max-width: 900px; margin: 0 auto; width: 100%; }
   .hero-tag {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--cream); border: 1px solid var(--border);
@@ -124,18 +124,18 @@
   .hero h1 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900; text-transform: uppercase;
-    font-size: clamp(3rem, 5.5vw, 5rem);
-    line-height: 0.92; letter-spacing: -0.01em;
-    color: var(--black); margin-bottom: 1.4rem;
+    font-size: clamp(2.3rem, 4.8vw, 4.4rem);
+    line-height: 0.95; letter-spacing: -0.01em;
+    color: var(--black); margin-bottom: 1.6rem;
   }
-  .hero h1 .line-gold { color: var(--gold); display: block; }
+  .hero h1 .line-gold { color: var(--gold); font-size: 1.12em; }
 
   .hero-sub {
-    font-size: 1.05rem; color: var(--mid);
-    line-height: 1.8; max-width: 420px;
-    margin-bottom: 2.2rem; font-weight: 400;
+    font-size: 1.1rem; color: var(--mid);
+    line-height: 1.8; max-width: 560px;
+    margin-bottom: 2.4rem; font-weight: 400;
   }
-  .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap; }
   .btn-primary {
     background: var(--gold); color: var(--black);
     padding: 0.9rem 2.2rem; border-radius: 2px;
@@ -152,32 +152,9 @@
   }
   .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
 
-  /* Hero right — big cutout photo */
-  .hero-right {
-    position: relative; z-index: 1;
-    align-self: stretch;
-    display: flex; align-items: flex-end; justify-content: center;
-    min-height: 420px;
-  }
-  .hero-right::before {
-    content: '';
-    position: absolute;
-    top: 6%; right: 2%; bottom: 0; left: 10%;
-    background: linear-gradient(155deg, var(--gold) 0%, var(--gold-dk) 100%);
-    border-radius: 28px;
-    transform: rotate(-5deg);
-    opacity: 0.16;
-    z-index: 0;
-  }
-  .hero-photo-big { position: relative; z-index: 1; width: 100%; max-width: 400px; }
-  .hero-photo-big img {
-    width: 100%; height: auto; display: block;
-    filter: drop-shadow(0 24px 36px rgba(0,0,0,0.18));
-  }
-
   /* ── INTRO CARDS ── */
   .intro-cards {
-    padding: 3.5rem 3rem 4.5rem; max-width: 1160px; margin: 0 auto;
+    padding: 3.5rem 3rem 4.5rem;
     position: relative; overflow: hidden;
     background: repeating-linear-gradient(135deg, rgba(201,168,76,0.05) 0px 1px, transparent 1px 26px), var(--off);
   }
@@ -188,8 +165,7 @@
     background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
     pointer-events: none; z-index: 0;
   }
-  .intro-cards-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-  .intro-cards-grid .full-span { grid-column: 1 / -1; }
+  .intro-cards-grid { max-width: 1160px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .hero-card {
     background: #fff;
     border: 1px solid var(--borderl);
@@ -210,20 +186,13 @@
     line-height: 1.1; margin-bottom: 0.3rem;
   }
   .hc-body { font-size: 0.85rem; color: var(--mid); line-height: 1.6; font-weight: 400; }
-  .hc-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-  .hc-stat {}
-  .hc-stat .num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900; font-size: 1.8rem;
-    color: var(--black); line-height: 1;
-  }
-  .hc-stat .num em { font-style: normal; color: var(--gold); }
-  .hc-stat .lbl { font-size: 0.72rem; color: var(--light); margin-top: 0.2rem; line-height: 1.3; }
 
   /* ── METRICHE ── */
   .metriche {
     background: var(--black); color: var(--off);
     padding: 2.2rem 3rem;
+  }
+  .metriche-inner {
     display: grid; grid-template-columns: repeat(4, 1fr);
     gap: 1rem; max-width: 1160px; margin: 0 auto;
   }
@@ -237,118 +206,66 @@
   .metrica-num em { font-style: normal; color: var(--gold); }
   .metrica-lbl { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-top: 0.5rem; line-height: 1.4; }
 
-  /* ── PROBLEMA ── */
-  .problema {
-    padding: 7rem 3rem;
-    max-width: 1000px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
-    position: relative; overflow: hidden;
-    border-top: 1px solid var(--border);
-    background: repeating-linear-gradient(135deg, rgba(201,168,76,0.05) 0px 1px, transparent 1px 26px), var(--off);
-  }
-  .problema::before {
-    content: '';
-    position: absolute; top: -100px; right: -120px;
-    width: 420px; height: 420px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,168,76,0.13) 0%, transparent 70%);
-    pointer-events: none; z-index: 0;
-  }
-  .problema > div { position: relative; z-index: 1; }
-  .problema h2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900; text-transform: uppercase;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    line-height: 1; color: var(--black); margin-bottom: 1.2rem;
-  }
-  .problema h2 em { font-style: normal; color: var(--gold); }
-  .problema-text { font-size: 0.95rem; color: var(--mid); line-height: 1.8; margin-bottom: 1.5rem; }
-  .problema-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
-  .problema-list li {
-    display: flex; gap: 0.8rem; align-items: flex-start;
-    font-size: 0.9rem; color: var(--mid); line-height: 1.5;
-  }
-  .problema-list li::before {
-    content: ''; width: 16px; height: 16px;
-    border-radius: 50%; background: var(--cream);
-    border: 1px solid var(--border);
-    flex-shrink: 0; margin-top: 0.15rem;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .pill-grid { display: flex; flex-direction: column; gap: 1rem; }
-  .pill {
-    background: #fff; border: 1px solid var(--borderl);
-    border-radius: 6px; padding: 1.2rem 1.4rem;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.04);
-    display: flex; align-items: flex-start; gap: 1rem;
-  }
-  .pill-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
-  .pill h4 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.95rem; font-weight: 800;
-    text-transform: uppercase; margin-bottom: 0.2rem;
-  }
-  .pill p { font-size: 0.82rem; color: var(--mid); line-height: 1.55; }
-
-  /* ── MATTEO ── */
-  .matteo {
+  /* ── PERCORSO ── */
+  .percorso {
     background: var(--black); color: var(--off);
     padding: 7rem 3rem;
     position: relative; overflow: hidden;
   }
-  .matteo::after {
+  .percorso::after {
     content: '';
     position: absolute; top: -80px; right: -80px;
     width: 400px; height: 400px; border-radius: 50%;
     background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
     pointer-events: none;
   }
-  .matteo-inner {
-    max-width: 1000px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  .percorso-inner {
+    max-width: 1100px; margin: 0 auto;
     position: relative; z-index: 1;
   }
-  .matteo h2 {
+  .percorso-intro { max-width: 680px; margin: 0 auto 4rem; text-align: center; }
+  .percorso-intro .section-eyebrow { justify-content: center; }
+  .percorso h2 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900; text-transform: uppercase;
     font-size: clamp(2.2rem, 4vw, 3.2rem);
     line-height: 1; margin-bottom: 1.2rem;
   }
-  .matteo h2 em { font-style: normal; color: var(--gold); }
-  .matteo-text { font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.85; margin-bottom: 1.8rem; }
-  .matteo-quote {
-    border-left: 2px solid var(--gold);
-    padding-left: 1.2rem; margin-top: 1.5rem;
-    font-style: italic; font-size: 0.95rem;
-    color: rgba(255,255,255,0.75); line-height: 1.7;
+  .percorso h2 em { font-style: normal; color: var(--gold); }
+  .percorso-text { font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.85; margin-bottom: 0; }
+  .fasi { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; row-gap: 3rem; }
+  .fase {
+    flex: 1 1 180px; max-width: 210px;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 0 0.5rem;
   }
-  .matteo-quote cite {
-    display: block; margin-top: 0.6rem;
-    font-style: normal; font-size: 0.75rem;
+  .fase-circle {
+    width: 2.75rem; height: 2.75rem; flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(155deg, var(--gold) 0%, var(--gold-dk) 100%);
+    box-shadow: 0 4px 14px rgba(201,168,76,0.3);
+    display: flex; align-items: center; justify-content: center;
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--gold);
+    font-weight: 900; font-size: 1.15rem; color: var(--black);
+    margin-bottom: 1rem;
   }
-  .pilastri { display: flex; flex-direction: column; gap: 1px; }
-  .pilastro {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 4px; padding: 1.4rem 1.6rem;
-    margin-bottom: 0.8rem;
-    transition: border-color 0.2s, background 0.2s;
+  .fase-connector {
+    flex: 1 1 30px; align-self: flex-start;
+    height: 2px; min-width: 20px; margin-top: 1.375rem;
+    background: linear-gradient(to right, var(--gold), rgba(201,168,76,0.15));
   }
-  .pilastro:hover { border-color: var(--border); background: rgba(255,255,255,0.06); }
-  .pilastro-num {
+  .fase-durata {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.65rem; font-weight: 700;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 0.4rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.5rem;
   }
-  .pilastro h3 {
+  .fase h3 {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1rem; font-weight: 800;
-    text-transform: uppercase; margin-bottom: 0.4rem;
+    text-transform: uppercase; margin-bottom: 0.5rem;
   }
-  .pilastro p { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .fase p { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
 
   /* ── 5 CLIENTI ── */
   .cinque {
@@ -389,7 +306,11 @@
     border-radius: 6px; padding: 1.5rem;
     box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   }
-  .cinque-card .icon { font-size: 1.4rem; margin-bottom: 0.8rem; }
+  .cinque-card .icon {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 1.4rem;
+    color: var(--gold); margin-bottom: 0.8rem;
+  }
   .cinque-card h4 {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.95rem; font-weight: 800;
@@ -465,10 +386,11 @@
 
   /* ── RISULTATI ── */
   .risultati {
-    padding: 7rem 3rem; max-width: 1160px; margin: 0 auto;
+    padding: 7rem 3rem;
     position: relative; overflow: hidden;
     background: repeating-linear-gradient(135deg, rgba(201,168,76,0.05) 0px 1px, transparent 1px 26px), var(--cream);
   }
+  .risultati-inner { max-width: 1160px; margin: 0 auto; }
   .risultati::before {
     content: '';
     position: absolute; top: -90px; left: 40%;
@@ -584,22 +506,27 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 860px) {
-    nav { padding: 1rem 1.5rem; }
-    .hero, .problema, .matteo-inner, .contratto-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .hero { padding: 8rem 1.5rem 4rem; min-height: auto; }
-    .hero-right { min-height: 280px; order: -1; }
-    .hero-photo-big { max-width: 240px; }
-    .intro-cards { padding: 2.5rem 1.5rem 0; }
+    html { font-size: 100%; }
+    nav { padding: 0.9rem 1.2rem; }
+    .nav-logo { font-size: 1rem; }
+    .nav-cta { padding: 0.55rem 1.1rem; font-size: 0.7rem; }
+    .nav-cta .nav-cta-full { display: none; }
+    .nav-cta .nav-cta-short { display: inline; }
+    .contratto-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .fase-connector { display: none; }
+    .hero { padding: 7rem 1.2rem 3.5rem; min-height: auto; }
+    .intro-cards { padding: 2.5rem 1.2rem 0; }
     .intro-cards-grid { grid-template-columns: 1fr; }
     .cinque-cards { grid-template-columns: 1fr; }
-    .metriche { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .metriche-inner { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .metrica:nth-child(3) { border-left: none; padding-left: 0; }
-    .cinque, .contratto, .cta-section, .risultati { padding: 5rem 1.5rem; }
+    .cinque, .contratto, .cta-section, .risultati { padding: 5rem 1.2rem; }
     .risultati-grid { grid-template-columns: 1fr; }
-    .problema { padding: 5rem 1.5rem; }
-    .matteo { padding: 5rem 1.5rem; }
     footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
-    .hc-stats { grid-template-columns: repeat(3,1fr); }
+    .percorso { padding: 5rem 1.2rem; }
+  }
+  @media (max-width: 420px) {
+    .hero h1 { font-size: clamp(1.9rem, 10vw, 2.6rem); }
   }
 </style>
 </head>
@@ -608,49 +535,51 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Matteo Pasero <span>Marketing</span></div>
-  <a href="https://calendar.app.google/CfDNrTWztkmmq8fr8" class="nav-cta" target="_blank">Parliamo delle tue campagne →</a>
+  <a href="https://calendar.app.google/CfDNrTWztkmmq8fr8" class="nav-cta" target="_blank"><span class="nav-cta-full">Parliamo delle tue campagne →</span><span class="nav-cta-short">Prenota →</span></a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-tag">Poche disponibilità per il prossimo trimestre</div>
+    <div class="hero-tag">Disponibilità limitate per il prossimo trimestre</div>
     <h1>
-      La pubblicità<br>
-      che porta<br>
-      <span class="line-gold">clienti veri.</span>
+      Il tuo alleato<br>
+      per acquisire<br>
+      <span class="line-gold">nuovi clienti.</span>
     </h1>
-    <p class="hero-sub">Seguo ogni cliente in ogni fase del progetto in prima persona. Il mio unico obiettivo è gestire progetti a lungo termine collaborando con aziende per vincere insieme.</p>
+    <p class="hero-sub">Collaboro con aziende strutturate e professionisti che vogliono trasformare la pubblicità online in un sistema prevedibile di acquisizione clienti, attraverso un metodo basato su dati, processi e miglioramento continuo.</p>
     <div class="hero-actions">
       <a href="https://calendar.app.google/CfDNrTWztkmmq8fr8" class="btn-primary" target="_blank">▶ Prenota una call gratuita</a>
-      <a href="#matteo" class="btn-ghost">Scopri come lavoro</a>
+      <a href="#percorso" class="btn-ghost">Scopri il percorso</a>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-photo-big"><img src="matteo.png" alt="Matteo Pasero"></div>
-  </div>
 </section>
+
+<!-- METRICHE -->
+<div class="metriche">
+  <div class="metriche-inner">
+    <div class="metrica">
+      <div class="metrica-num">300.000€<em>+</em></div>
+      <div class="metrica-lbl">valore generato ogni mese dalle mie campagne</div>
+    </div>
+    <div class="metrica">
+      <div class="metrica-num">-60<em>%</em></div>
+      <div class="metrica-lbl">di riduzione sul costo per contatto su chi faceva già lead generation</div>
+    </div>
+    <div class="metrica">
+      <div class="metrica-num">4<em>€</em></div>
+      <div class="metrica-lbl">generati per ogni euro investito nelle mie campagne</div>
+    </div>
+    <div class="metrica">
+      <div class="metrica-num">6,50<em>€</em></div>
+      <div class="metrica-lbl">costo medio per contatto dei miei clienti attivi oggi</div>
+    </div>
+  </div>
+</div>
 
 <!-- INTRO CARDS -->
 <section class="intro-cards">
   <div class="intro-cards-grid">
-    <div class="hero-card gold-accent full-span">
-      <div class="hc-label">Il mio metodo in numeri</div>
-      <div class="hc-stats">
-        <div class="hc-stat">
-          <div class="num">3<em>mesi</em></div>
-          <div class="lbl">niente vincoli annuali, bastano 3 mesi per vedere i risultati</div>
-        </div>
-        <div class="hc-stat">
-          <div class="num">5<em>alla volta</em></div>
-          <div class="lbl">seguo massimo 5 clienti alla volta, per dedicare le mie energie ad ogni progetto</div>
-        </div>
-        <div class="hc-stat">
-          <div class="num">1<em>referente</em></div>
-          <div class="lbl">interlocutore unico, sarò sempre l'unica persona dietro al progetto</div>
-        </div>
-      </div>
-    </div>
     <div class="hero-card">
       <div class="hc-label">I vantaggi di un professionista dedicato.</div>
       <div class="hc-title">Avrai il mio numero diretto.</div>
@@ -658,36 +587,17 @@
     </div>
     <div class="hero-card gold-accent">
       <div class="hc-label">Per chi fa già lead generation</div>
-      <div class="hc-body">I lead arrivano ma poche si trasformano in clienti? Capiamo insieme dov'è il nodo delle campagne, prenota una call gratuita oggi.</div>
+      <div class="hc-body">Se generi già contatti ma pochi si trasformano in clienti, analizziamo insieme dove si perde valore nel funnel: prenota una call gratuita.</div>
     </div>
   </div>
 </section>
 
-<!-- METRICHE -->
-<div class="metriche">
-  <div class="metrica">
-    <div class="metrica-num">300.000€<em>+</em></div>
-    <div class="metrica-lbl">valore generato ogni mese dalle mie campagne</div>
-  </div>
-  <div class="metrica">
-    <div class="metrica-num">-60<em>%</em></div>
-    <div class="metrica-lbl">di riduzione sul costo per contatto su chi faceva già lead generation</div>
-  </div>
-  <div class="metrica">
-    <div class="metrica-num">4<em>€</em></div>
-    <div class="metrica-lbl">generati per ogni euro investito nelle mie campagne</div>
-  </div>
-  <div class="metrica">
-    <div class="metrica-num">6,50<em>€</em></div>
-    <div class="metrica-lbl">costo medio per contatto dei miei clienti attivi oggi</div>
-  </div>
-</div>
-
 <!-- RISULTATI -->
 <section class="risultati" id="risultati">
+ <div class="risultati-inner">
   <div class="risultati-head">
     <div class="section-eyebrow">I risultati dei progetti</div>
-    <h2>Faccio parlare <em>i numeri</em><br>e i miei clienti.</h2>
+    <h2>I numeri raggiunti<br><em>insieme ai miei clienti.</em></h2>
     <p>Ogni riquadro corrisponde ad un progetto, con un problema reale risolto prima di lanciare la prima campagna.</p>
   </div>
 
@@ -792,81 +702,51 @@
       </div>
     </div>
   </div>
+ </div>
 </section>
 
-<!-- PROBLEMA -->
-<section class="problema" id="problema">
-  <div>
-    <div class="section-eyebrow">Il problema delle agenzie</div>
-    <h2>Tanti clienti,<br><em>poca attenzione.</em></h2>
-    <p class="problema-text">Le agenzie devono fare numero per stare in piedi: più clienti gestiscono, più fatturano. Il tuo account finisce quasi sempre a un collaboratore esterno che non conosce la tua attività.</p>
-    <p class="problema-text">Cambi referente senza preavviso, ripeti il briefing da capo, i risultati calano e nessuno ti spiega perché. Non è cattiveria — è un modello che mette il volume prima della qualità.</p>
-  </div>
-  <div class="pill-grid">
-    <div class="pill">
-      <div class="pill-icon">🔄</div>
-      <div>
-        <h4>Il lavoro viene subappaltato</h4>
-        <p>Le campagne vengono spesso gestite da freelance o collaboratori esterni, lontani dal tuo progetto e dalla tua storia.</p>
-      </div>
+<!-- IL PERCORSO -->
+<section class="percorso" id="percorso">
+  <div class="percorso-inner">
+    <div class="percorso-intro">
+      <div class="section-eyebrow" style="color:var(--gold);">Il metodo</div>
+      <h2>Un percorso<br><em>strutturato</em><br>in cinque fasi.</h2>
+      <p class="percorso-text">Un processo preciso, costruito per raggiungere gli obiettivi condivisi, rispettando le scadenze e tracciando i KPI. Coordino strategia, materiali e campagne in prima persona, integrandomi con i vostri processi interni.</p>
     </div>
-    <div class="pill">
-      <div class="pill-icon">👤</div>
-      <div>
-        <h4>Non sai mai chi lavora sul tuo account</h4>
-        <p>Il referente che ti ha convinto a firmare raramente è quello che poi segue le campagne giorno per giorno.</p>
+    <div class="fasi">
+      <div class="fase">
+        <div class="fase-circle">01</div>
+        <div class="fase-durata">7 giorni</div>
+        <h3>Le fondamenta del progetto</h3>
+        <p>Analizzo mercato, posizionamento e dati storici, allineo gli obiettivi con la direzione e predispongo tecnicamente gli ambienti.</p>
       </div>
-    </div>
-    <div class="pill">
-      <div class="pill-icon">📉</div>
-      <div>
-        <h4>L'attenzione si diluisce nel tempo</h4>
-        <p>I primi mesi sembrano promettenti. Poi il tuo progetto diventa uno dei tanti e i risultati si assestano senza migliorare.</p>
+      <div class="fase-connector"></div>
+      <div class="fase">
+        <div class="fase-circle">02</div>
+        <div class="fase-durata">7 giorni</div>
+        <h3>La preparazione al lancio</h3>
+        <p>Realizzo i primi asset creativi, imposto gli strumenti e il tracciamento dei risultati.</p>
       </div>
-    </div>
-    <div class="pill">
-      <div class="pill-icon">🔒</div>
-      <div>
-        <h4>Sei vincolato da contratti annuali</h4>
-        <p>Anche quando non sei soddisfatto, uscire ha un costo. E il problema resta irrisolto per mesi.</p>
+      <div class="fase-connector"></div>
+      <div class="fase">
+        <div class="fase-circle">03</div>
+        <div class="fase-durata">cuore del progetto</div>
+        <h3>Campagne attive con presidio quotidiano</h3>
+        <p>Monitoro le performance e ottimizzo costantemente budget, target e creatività.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- MATTEO -->
-<section class="matteo" id="matteo">
-  <div class="matteo-inner">
-    <div>
-      <div class="section-eyebrow" style="color:var(--gold);">Come lavoro io</div>
-      <h2>Dall'analisi<br>alle grafiche.<br><em>Solo io.</em></h2>
-      <p class="matteo-text">Sono un libero professionista e seguo l'intero processo da solo: studio la tua attività, costruisco la strategia, scrivo i testi, realizzo le grafiche e gestisco le campagne. Nessun subappalto, nessuna traduzione del briefing a terzi.</p>
-      <p class="matteo-text">Questo significa che chi conosce il tuo business sono io — dall'inizio alla fine. Quando mi chiami, rispondo io. Quando c'è un problema, lo risolvo io.</p>
-      <blockquote class="matteo-quote">
-        "Non ho bisogno di fare volume. Ho bisogno di lavorare con aziende che credono nel mio metodo, con cui costruire un rapporto stabile e crescere insieme negli anni."
-        <cite>— Matteo Pasero</cite>
-      </blockquote>
-    </div>
-    <div class="pilastri">
-      <div class="pilastro">
-        <div class="pilastro-num">01 — Analisi</div>
-        <h3>Studio la tua attività in profondità</h3>
-        <p>Prima di toccare una campagna, capisco il tuo mercato, i tuoi clienti ideali e cosa ti distingue davvero dalla concorrenza.</p>
+      <div class="fase-connector"></div>
+      <div class="fase">
+        <div class="fase-circle">04</div>
+        <div class="fase-durata">se necessario</div>
+        <h3>Quando i dati segnalano un problema</h3>
+        <p>Individuo la causa reale nel funnel e intervengo tempestivamente, tracciando ogni modifica.</p>
       </div>
-      <div class="pilastro">
-        <div class="pilastro-num">02 — Strategia</div>
-        <h3>Costruisco il percorso su misura</h3>
-        <p>Ogni attività è diversa. La strategia parte dai tuoi obiettivi reali, non da un template standardizzato da agenzia.</p>
-      </div>
-      <div class="pilastro">
-        <div class="pilastro-num">03 — Creatività</div>
-        <h3>Testi e grafiche fatti da me</h3>
-        <p>Scrivo i testi e realizzo le grafiche degli annunci. Il messaggio è coerente, perché chi lo conosce è la stessa persona che lo crea.</p>
-      </div>
-      <div class="pilastro">
-        <div class="pilastro-num">04 — Gestione e crescita</div>
-        <h3>Monitoraggio quotidiano e report chiari</h3>
-        <p>Seguo le campagne ogni giorno e ti presento ogni mese un report con numeri veri: spesa, contatti, clienti acquisiti.</p>
+      <div class="fase-connector"></div>
+      <div class="fase">
+        <div class="fase-circle">05</div>
+        <div class="fase-durata">scaliamo</div>
+        <h3>Consolidamento e scala</h3>
+        <p>Rendo il sistema più solido e lo estendo sui canali che generano valore.</p>
       </div>
     </div>
   </div>
@@ -876,22 +756,22 @@
 <section class="cinque" id="cinque">
   <div class="cinque-num" aria-hidden="true">MAX 5</div>
   <div class="cinque-inner">
-    <div class="section-eyebrow" style="justify-content:center;">La scelta più importante</div>
+    <div class="section-eyebrow" style="justify-content:center;">Massima attenzione ad ogni progetto</div>
     <h2>Massimo <em>5 clienti</em><br>alla volta.</h2>
     <p class="cinque-text">Non è un limite, è una scelta. Lavorare con pochi clienti mi permette di dedicare a ognuno il tempo e l'energia che il suo progetto merita davvero. Non ti tratto come un numero da gestire — costruiamo qualcosa insieme, nel tempo.</p>
     <div class="cinque-cards">
       <div class="cinque-card">
-        <div class="icon">🎯</div>
+        <div class="icon">01</div>
         <h4>Attenzione completa</h4>
         <p>Il tuo progetto riceve la stessa attenzione al terzo mese che al primo. Perché non ho altri 30 clienti che aspettano.</p>
       </div>
       <div class="cinque-card">
-        <div class="icon">🤝</div>
+        <div class="icon">02</div>
         <h4>Un rapporto che dura</h4>
         <p>Cerco aziende con cui costruire una collaborazione stabile nel tempo, non clienti da acquisire e dimenticare.</p>
       </div>
       <div class="cinque-card">
-        <div class="icon">📈</div>
+        <div class="icon">03</div>
         <h4>Crescita condivisa</h4>
         <p>Quando la tua attività cresce, cresce anche il mio lavoro con te. I nostri obiettivi sono allineati fin dall'inizio.</p>
       </div>
@@ -921,15 +801,15 @@
       </div>
       <div class="compare-row">
         <div class="cr-cell cr-them"><span>Il lavoro viene subappaltato</span></div>
-        <div class="cr-cell cr-me">Tutto fatto da Matteo</div>
+        <div class="cr-cell cr-me">Un unico referente</div>
       </div>
       <div class="compare-row">
         <div class="cr-cell cr-them"><span>Molti clienti, attenzione divisa</span></div>
         <div class="cr-cell cr-me">Massimo 5 clienti alla volta</div>
       </div>
       <div class="compare-row">
-        <div class="cr-cell cr-them"><span>Referente diverso ogni mese</span></div>
-        <div class="cr-cell cr-me">Un solo referente, sempre io</div>
+        <div class="cr-cell cr-them"><span>Progetti copia e incolla</span></div>
+        <div class="cr-cell cr-me">Progetti studiati e costruiti insieme</div>
       </div>
       <div class="compare-row">
         <div class="cr-cell cr-them"><span>Contratto annuale obbligatorio</span></div>
@@ -947,9 +827,9 @@
 <section class="cta-section">
   <div class="section-eyebrow" style="justify-content:center; color:rgba(201,168,76,0.7);">Iniziamo</div>
   <h2>Uno dei cinque<br>posti è <em>tuo.</em></h2>
-  <p>Prima call gratuita, senza impegno. Raccontami la tua attività e valutiamo insieme se ha senso collaborare.</p>
+  <p>Primo appuntamento gratuito, senza impegno. Raccontami la tua attività e valutiamo insieme se ha senso collaborare.</p>
   <a href="https://calendar.app.google/CfDNrTWztkmmq8fr8" class="btn-cta" target="_blank">▶ Prenota la call gratuita</a>
-  <span class="cta-note">Matteo risponde entro 24 ore · I posti disponibili si aggiornano ogni trimestre</span>
+  <span class="cta-note">Rispondo entro 24 ore · I posti disponibili si aggiornano ogni trimestre</span>
 </section>
 
 <!-- FOOTER -->
