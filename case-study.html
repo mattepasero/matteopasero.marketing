@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study — Matteo Pasero Marketing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg: #14130f;
+    --bg-panel: #1b1a14;
+    --hairline: #2c2a20;
+    --gold: #C9A84C;
+    --gold-dim: #8a7434;
+    --ink: #F2EFE9;
+    --ink-soft: #b8b3a4;
+    --ink-faint: #77725f;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,h2,h3,.num,.eyebrow{ font-family:'Barlow Condensed', sans-serif; }
+  a{ color:inherit; }
+
+  .bg-texture{
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background:
+      radial-gradient(ellipse at 20% -10%, rgba(201,168,76,0.08), transparent 45%),
+      radial-gradient(ellipse at 100% 110%, rgba(201,168,76,0.05), transparent 50%);
+  }
+
+  .wrap{ max-width: 980px; margin:0 auto; padding: 0 28px; position:relative; z-index:1; }
+
+  /* ---------- HEADER ---------- */
+  header{
+    padding: 80px 0 56px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .brand{
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom: 56px;
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .brand strong{ color: var(--ink); font-weight:700; }
+  .brand .tag{ color: var(--gold); }
+
+  .eyebrow{
+    font-size: 15px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 18px;
+    font-weight: 600;
+  }
+  .eyebrow::before{
+    content:'';
+    display:inline-block;
+    width: 26px; height:1px;
+    background: var(--gold);
+    margin-right: 12px;
+    vertical-align: middle;
+  }
+
+  h1{
+    font-size: clamp(40px, 6.5vw, 72px);
+    line-height: 1.0;
+    font-weight: 800;
+    margin: 0 0 24px;
+    letter-spacing: -0.01em;
+    max-width: 780px;
+  }
+  h1 em{ font-style: normal; color: var(--gold); }
+
+  .lede{
+    max-width: 600px;
+    font-family:'Source Serif 4', serif;
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  .section-head{ padding: 66px 0 6px; }
+  .section-head h2{
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .section-head p{
+    font-family:'Source Serif 4', serif;
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 560px;
+    margin-top: 12px;
+  }
+
+  /* ---------- DETAILED CASE LIST ---------- */
+  .case{
+    padding: 44px 0;
+    border-bottom: 1px solid var(--hairline);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 36px;
+  }
+  .case:first-of-type{ padding-top: 8px; }
+
+  .case-head .sector{
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+  .case-head .result{
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .case-head .result .accent{ color: var(--gold); }
+
+  .case-body .blocks{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 22px;
+  }
+  .case-body .block-label{
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .case-body .block-text{
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  .case-body blockquote{
+    margin: 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline);
+    font-family:'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .case-body blockquote::before{
+    content: '“';
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-style: normal;
+    font-size: 20px;
+    margin-right: 2px;
+  }
+  .case-body cite{
+    display:block;
+    font-style: normal;
+    font-family:'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin-top: 8px;
+  }
+  .case-body cite::before{ content: '— '; }
+
+  @media (max-width: 720px){
+    .case{ grid-template-columns: 1fr; gap: 16px; }
+    .case-body .blocks{ grid-template-columns: 1fr; gap: 18px; }
+  }
+
+  /* ---------- REVIEWS ---------- */
+  .reviews-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    margin-top: 34px;
+    border: 1px solid var(--hairline);
+  }
+  .review{
+    background: var(--bg-panel);
+    padding: 30px 32px;
+  }
+  .review .stars{
+    color: var(--gold);
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+  .review p{
+    font-family:'Source Serif 4', serif;
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0 0 16px;
+  }
+  .review .who{
+    font-size: 13px;
+    color: var(--ink-faint);
+    display:flex;
+    justify-content: space-between;
+  }
+  .review .who strong{ color: var(--ink-soft); font-weight: 600; }
+
+  @media (max-width: 720px){
+    .reviews-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- CTA ---------- */
+  .cta{
+    margin: 90px 0 80px;
+    padding: 56px 44px;
+    background: linear-gradient(160deg, #201d12, #171610);
+    border: 1px solid var(--gold-dim);
+    text-align: center;
+  }
+  .cta h2{
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 700;
+    margin: 0 0 14px;
+  }
+  .cta h2 em{ font-style:normal; color: var(--gold); }
+  .cta p{
+    font-family:'Source Serif 4', serif;
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 460px;
+    margin: 0 auto 30px;
+  }
+  .btn{
+    display:inline-block;
+    background: var(--gold);
+    color: #14130f;
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    text-decoration:none;
+    padding: 15px 34px;
+    border: 1px solid var(--gold);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .btn:hover{ background: transparent; color: var(--gold); }
+  .cta .note{
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+
+  footer{
+    border-top: 1px solid var(--hairline);
+    padding: 28px 0 48px;
+    font-size: 13px;
+    color: var(--ink-faint);
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  footer a{ color: var(--ink-faint); text-decoration: none; margin-left: 18px; }
+  footer a:hover{ color: var(--gold); }
+</style>
+</head>
+<body>
+
+<div class="bg-texture"></div>
+
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <span><strong>Matteo Pasero</strong> Marketing</span>
+      <span class="tag">Case Study</span>
+    </div>
+
+    <p class="eyebrow">I risultati raggiunti insieme</p>
+    <h1>Da dove partivano, <em>cosa ho fatto,</em> dove sono arrivati.</h1>
+    <p class="lede">Ogni storia nasce da un problema vero: a volte partiamo da zero con attività che vogliono crescere, a volte facciamo rinascere campagne già pubblicate che non stavano portando i risultati desiderati. Quello che segue è il lavoro fatto insieme e i risultati raggiunti.</p>
+  </header>
+
+  <div class="section-head">
+    <h2>I casi.</h2>
+    <p>Ogni caso è un problema reale, risolto prima di lanciare la prima campagna.</p>
+  </div>
+
+  <div class="case">
+    <div class="case-head">
+      <div class="sector">Idraulico a Rimini</div>
+      <div class="result">Da pochi contatti a <span class="accent">5 al giorno</span></div>
+    </div>
+    <div class="case-body">
+      <div class="blocks">
+        <div>
+          <div class="block-label">Partiva da</div>
+          <div class="block-text">Roberto veniva seguito da un'agenzia che pubblicava ogni tanto qualche post nei gruppi Facebook della zona. Nessuna strategia dietro, solo presenza sporadica — invisibile nella marea di annunci simili che si vedono in quel settore.</div>
+        </div>
+        <div>
+          <div class="block-label">Cosa ho fatto</div>
+          <div class="block-text">Ho analizzato l'attività, il mercato locale e i competitor per individuare cosa rendesse Roberto davvero diverso dagli altri idraulici della zona. Ho creato le grafiche pubblicitarie sui suoi punti di forza reali e impostato un funnel che scartasse i contatti poco seri. Le richieste buone arrivano in tempo reale al team vendite, con gli strumenti giusti per gestire le trattative senza perdere tempo.</div>
+        </div>
+      </div>
+      <blockquote>Dai... è il nostro momento!!!<cite>Roberto, idraulico</cite></blockquote>
+    </div>
+  </div>
+
+  <div class="case">
+    <div class="case-head">
+      <div class="sector">Termoidraulica</div>
+      <div class="result">Costo a contatto da 50€ a <span class="accent">13€</span></div>
+    </div>
+    <div class="case-body">
+      <div class="blocks">
+        <div>
+          <div class="block-label">Partiva da</div>
+          <div class="block-text">Fabio aveva già delle campagne attive, ma il costo per contatto era salito a 50€: il pubblico raggiunto era diventato sempre più generico, e quindi più caro da convertire.</div>
+        </div>
+        <div>
+          <div class="block-label">Cosa ho fatto</div>
+          <div class="block-text">Ho analizzato il mercato locale, i competitor e individuato la USP di Fabio, poi ho testato diversi angoli di comunicazione fino a isolare quelli che portavano persone davvero interessate, non solo curiosi. Il costo per contatto è sceso da 50€ a 13€.</div>
+        </div>
+      </div>
+      <blockquote>I contatti sono i migliori che abbiamo mai ricevuto in termini di qualità e il costo per contatto è stato dimezzato, direi perfetto.<cite>Fabio S., termoidraulica</cite></blockquote>
+    </div>
+  </div>
+
+  <div class="case">
+    <div class="case-head">
+      <div class="sector">Compravendita auto tra privati</div>
+      <div class="result"><span class="accent">46 richieste</span> in meno di due settimane</div>
+    </div>
+    <div class="case-body">
+      <div class="blocks">
+        <div>
+          <div class="block-label">Partiva da</div>
+          <div class="block-text">Una startup che, nonostante i tentativi precedenti, non era mai riuscita a generare un flusso reale di richieste. Un servizio nuovo per il mercato, che le persone non sapevano ancora di poter cercare.</div>
+        </div>
+        <div>
+          <div class="block-label">Cosa ho fatto</div>
+          <div class="block-text">Ho girato dei video pensati per parlare alla pancia delle persone, non alla testa, per far emergere un bisogno che ancora non si erano poste. Chi rispondeva entrava in un funnel volutamente semplice all'inizio, reso via via più selettivo — con più domande — per lasciare passare solo i contatti davvero interessati.</div>
+        </div>
+      </div>
+      <blockquote>Non mi aspettavo un riscontro così rapido: in due settimane avevamo già più contatti di quanti riuscissimo a gestire.<cite>Tony, compravendita auto</cite></blockquote>
+    </div>
+  </div>
+
+  <div class="case">
+    <div class="case-head">
+      <div class="sector">Personalizzazione mezzi commerciali</div>
+      <div class="result">Una flotta di <span class="accent">10 camion</span> in una settimana</div>
+    </div>
+    <div class="case-body">
+      <div class="blocks">
+        <div>
+          <div class="block-label">Partiva da</div>
+          <div class="block-text">Filippo veniva da un'esperienza con un'agenzia di comunicazione classica: pubblicità pensata per farsi vedere, non per portare qualcuno a fare qualcosa.</div>
+        </div>
+        <div>
+          <div class="block-label">Cosa ho fatto</div>
+          <div class="block-text">Ho impostato un sistema a risposta diretta, una specie di configuratore — lo stesso principio usato dai grandi marchi auto sui loro siti. La persona sceglie subito la grafica del proprio mezzo, senza chiamare o aspettare un preventivo. Nella prima settimana è arrivata la richiesta di personalizzare un'intera flotta di 10 camion.</div>
+        </div>
+      </div>
+      <blockquote>Ciao... si si ho visto... Cazzarola... li stiamo gestendo da stamattina, ti tengo aggiornato.<cite>Filippo, personalizzazione mezzi</cite></blockquote>
+    </div>
+  </div>
+
+  <div class="case">
+    <div class="case-head">
+      <div class="sector">Azienda di serramenti</div>
+      <div class="result"><span class="accent">45 richieste</span> in 14 giorni</div>
+    </div>
+    <div class="case-body">
+      <div class="blocks">
+        <div>
+          <div class="block-label">Partiva da</div>
+          <div class="block-text">Si partiva da zero. Le prime campagne, sui serramenti classici, non hanno funzionato: su quel prodotto la concorrenza online è altissima.</div>
+        </div>
+        <div>
+          <div class="block-label">Cosa ho fatto</div>
+          <div class="block-text">Ho spostato il prodotto di punta dai serramenti alle coperture auto antigrandine: stessa azienda, stessa competenza, ma una domanda che nessun altro stava intercettando. Meno concorrenza, meno spesa per farsi notare.</div>
+        </div>
+      </div>
+      <blockquote>In due settimane il volume di richieste è stato tale da doverlo ricalibrare, per gestirlo con la qualità giusta.<cite>Ciro G., azienda di serramenti</cite></blockquote>
+    </div>
+  </div>
+
+  <div class="case">
+    <div class="case-head">
+      <div class="sector">Agenzia immobiliare</div>
+      <div class="result"><span class="accent">8 immobili</span> acquisiti in 2 mesi</div>
+    </div>
+    <div class="case-body">
+      <div class="blocks">
+        <div>
+          <div class="block-label">Partiva da</div>
+          <div class="block-text">Si partiva da zero, in una zona con diverse agenzie concorrenti già radicate e conosciute da anni.</div>
+        </div>
+        <div>
+          <div class="block-label">Cosa ho fatto</div>
+          <div class="block-text">Ho costruito un sistema che raccontasse un modo di lavorare diverso da quello delle altre agenzie della zona, facendo leva su due prove concrete: la velocità di vendita e le video recensioni dei proprietari soddisfatti.</div>
+        </div>
+      </div>
+      <blockquote>Finalmente ricevo richieste di persone che vogliono affidarmi la loro casa senza dover andare in giro a suonare i campanelli.<cite>Fabrizio A., agente immobiliare</cite></blockquote>
+    </div>
+  </div>
+
+  <div class="case">
+    <div class="case-head">
+      <div class="sector">Fotografo e videomaker</div>
+      <div class="result">Così tante richieste da <span class="accent">spegnere le ads</span></div>
+    </div>
+    <div class="case-body">
+      <div class="blocks">
+        <div>
+          <div class="block-label">Partiva da</div>
+          <div class="block-text">Si partiva da zero. Luca sapeva fare bene il suo lavoro, ma non c'era ancora un modo chiaro di comunicarlo che lo distinguesse dagli altri fotografi della zona.</div>
+        </div>
+        <div>
+          <div class="block-label">Cosa ho fatto</div>
+          <div class="block-text">Ho costruito il posizionamento tenendo insieme i suoi gusti personali e i numeri necessari per reggere un'attività di marketing sostenibile. Ho curato il rebranding e girato le ads per due pubblici specifici: agenzie immobiliari e host Airbnb.</div>
+        </div>
+      </div>
+      <div class="block-text" style="font-style:italic; color: var(--ink-soft); margin-bottom: 22px;">Il fatturato è cresciuto al punto da dover spegnere per un po' le campagne, per riuscire a stare dietro alle richieste in arrivo.</div>
+      <blockquote>Matte che dici se spegniamo le campagne? Al momento non riuscirei a gestire altre richieste..<cite>Luca C., Fotografo e Videomaker</cite></blockquote>
+    </div>
+  </div>
+
+  <div class="section-head">
+    <h2>Cosa dicono i miei clienti.</h2>
+    <p>Recensioni lasciate direttamente da chi ha lavorato con me.</p>
+  </div>
+
+  <div class="reviews-grid">
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>Il volume di richieste è stato importante fin dalla prima settimana, ben oltre quello che gestivamo prima. Grazie al webinar gratuito, quasi la metà degli iscritti si è presentata davvero all'appuntamento online — 245 iscritti a meno di 1,50€ l'uno.</p>
+      <div class="who"><strong>Gabriele Z.</strong><span>Attrezzature dentali</span></div>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>Non pensavo saremmo arrivati al tutto esaurito così in fretta. Con appena 30€ al giorno di budget, i posti per l'evento sono finiti in meno di due settimane. Tredici giorni sono decisamente sopra le aspettative.</p>
+      <div class="who"><strong>Davide S.</strong><span>Studio dentistico — evento</span></div>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>Vendevamo il corso a un prezzo più alto della concorrenza e il ritorno è stato comunque superiore a quattro volte l'investito, nonostante il posizionamento premium.</p>
+      <div class="who"><strong>Edy S.</strong><span>Formazione sanitaria</span></div>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>Super disponibile, sempre pronto a risolvere problemi: quando si lavora con la passione e la dedizione lo si capisce subito!</p>
+      <div class="who"><strong>Semplicemente Justin</strong><span>Google Recensioni</span></div>
+    </div>
+
+  </div>
+
+  <div class="cta">
+    <h2>Il prossimo caso <em>può essere il tuo.</em></h2>
+    <p>Primo appuntamento gratuito, senza impegno. Raccontami la tua attività e valutiamo insieme se ha senso collaborare.</p>
+    <a class="btn" href="https://calendar.app.google/CfDNrTWztkmmq8fr8">Prenota la call gratuita →</a>
+    <div class="note">Rispondo entro 24 ore · Massimo 5 clienti alla volta</div>
+  </div>
+
+  <footer>
+    <span>© 2026 Matteo Pasero Marketing · P.IVA 01757360050</span>
+    <span>
+      <a href="https://www.instagram.com/matteopasero.marketing/">Instagram</a>
+      <a href="http://wa.me/+393793393533">WhatsApp</a>
+      <a href="https://www.facebook.com/people/Paso-Adv/61572297794136/">Facebook</a>
+    </span>
+  </footer>
+
+</div>
+
+</body>
+</html>
