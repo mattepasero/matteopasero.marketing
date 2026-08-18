@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sogni&Sogni — Materasso su misura a Piove di Sacco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --notte:#17213C;
+    --lino:#F6F3EC;
+    --ottone:#B8863F;
+    --piombo:#2B2E36;
+    --bianco:#FBF9F4;
+    --riga:#DFD6C3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:var(--piombo);background:var(--lino);line-height:1.6;}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;line-height:1.15;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  section{padding:52px 0;}
+  section.bg-white{background:var(--bianco);}
+  hr{display:none;}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ottone);}
+  .btn{
+    display:inline-block;background:var(--ottone);color:var(--bianco);
+    font-weight:600;font-size:15.5px;padding:14px 24px;border-radius:3px;
+    text-decoration:none;border:none;cursor:pointer;margin-top:18px;
+  }
+  .btn:hover{background:#a1782f;}
+  ol.offer{margin:22px 0 0 20px;}
+  ol.offer li{margin-bottom:10px;font-size:15.5px;}
+  ol.offer li b{font-weight:600;}
+  ul.plain{margin:20px 0 0 20px;}
+  ul.plain li{margin-bottom:10px;font-size:15.5px;}
+  .pillars{margin-top:18px;}
+  .pillars p{margin-bottom:10px;font-size:15.5px;}
+  .pin{text-align:center;font-size:14.5px;color:#5A5D64;padding:24px 0;}
+  ol.steps{margin:22px 0 0 20px;}
+  ol.steps li{margin-bottom:14px;font-size:15.5px;}
+  ol.steps li b{display:block;font-size:16.5px;font-family:'Fraunces',serif;font-weight:600;margin-bottom:2px;}
+
+  /* hero */
+  header.hero{background:var(--notte);color:var(--bianco);text-align:center;padding:64px 0 54px;}
+  header.hero .eyebrow{color:#D9AE6E;}
+  header.hero .stamp{font-weight:700;font-size:15px;margin:10px 0 22px;color:var(--bianco);}
+  header.hero h1{font-size:34px;margin-bottom:12px;}
+  header.hero h2{font-size:20px;color:#D9AE6E;margin-bottom:16px;font-weight:600;}
+  header.hero p{font-size:15.5px;color:#C6CCE0;max-width:520px;margin:0 auto;}
+  header.hero .chevron{display:block;margin-top:26px;color:#8A93B8;font-size:22px;text-decoration:none;}
+
+  /* testimonials */
+  .test{border-top:1px solid var(--riga);padding:20px 0;}
+  .test .stars{color:var(--ottone);font-size:13px;letter-spacing:2px;margin-bottom:6px;}
+  .test p{font-size:14.5px;color:#3E4048;margin-bottom:6px;}
+  .test .who{font-size:13px;font-weight:600;}
+  .test .who span{font-weight:400;color:#8A7A55;}
+
+  /* form */
+  .form-box{margin-top:24px;}
+  .form-box label{display:block;font-size:13.5px;font-weight:600;margin-bottom:6px;margin-top:16px;}
+  .form-box label:first-of-type{margin-top:0;}
+  .form-box input,.form-box select{
+    width:100%;padding:11px 13px;border:1px solid var(--riga);border-radius:3px;
+    font-family:'Inter',sans-serif;font-size:14.5px;background:var(--bianco);
+  }
+  .form-box .check{display:flex;align-items:flex-start;gap:9px;margin-top:16px;}
+  .form-box .check input{width:auto;margin-top:3px;}
+  .form-box .check span{font-size:13px;color:#5A5D64;}
+
+  /* faq */
+  .faq{border-top:1px solid var(--riga);padding:18px 0;}
+  .faq summary{font-weight:600;font-size:15px;cursor:pointer;list-style:none;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::before{content:'❓ ';}
+  .faq p{margin-top:10px;font-size:14.5px;color:#4B4E56;}
+
+  /* contatti / footer */
+  .contatti{font-size:14.5px;}
+  .contatti p{margin-bottom:6px;}
+  footer{background:var(--notte);color:#B9C0D6;text-align:center;padding:26px 0;font-size:12.5px;}
+
+  .floaters{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:10px;z-index:50;}
+  .floaters a{
+    width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 16px rgba(0,0,0,.25);font-size:19px;text-decoration:none;
+  }
+  .floaters .wa{background:#25D366;color:#fff;}
+  .floaters .call{background:var(--ottone);color:#fff;}
+
+  @media(max-width:600px){
+    header.hero h1{font-size:27px;}
+    header.hero h2{font-size:17px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">SOGNI &amp; SOGNI</div>
+    <div class="stamp">RISERVATO A CHI ABITA A PIOVE DI SACCO O NEI COMUNI LIMITROFI</div>
+    <h1>Da quanto tempo dormi male?</h1>
+    <h2>Costruiamo il tuo materasso su misura, lo provi in negozio</h2>
+    <p>Non lo ordini alla cieca online. Ti sdrai davvero sui modelli e scegli i materiali con un consulente, prima di decidere.</p>
+    <a class="chevron" href="#offerta">⌄</a>
+  </div>
+</header>
+
+<section class="bg-white" id="offerta">
+  <div class="wrap">
+    <h2 style="font-size:23px;">LA NOSTRA CONSULENZA GRATUITA COMPRENDE:</h2>
+    <ol class="offer">
+      <li>Prova fisica dei modelli <b>in showroom</b></li>
+      <li>Misurazione della postura e valutazione con un consulente</li>
+      <li>Materasso <b>costruito su misura</b>: altezza, rigidità e materiali scelti da te</li>
+      <li>Consegna e montaggio a casa, a Piove di Sacco e comuni limitrofi</li>
+      <li>Ritiro e smaltimento del vecchio materasso</li>
+      <li>Possibilità di <b>pagamento a rate</b></li>
+    </ol>
+    <a class="btn" href="#form">Voglio provare il materasso su misura!</a>
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <div class="wrap">
+    <h2 style="font-size:23px;">Perché scegliere Sogni&amp;Sogni?</h2>
+    <p style="margin-top:14px;font-size:15.5px;">A differenza dei grandi store online e della grande distribuzione, dove ordini alla cieca, aspetti settimane e non sai mai con chi parlare se qualcosa non va, noi di Sogni&amp;Sogni siamo un negozio fisico di Piove di Sacco. Il nostro unico obiettivo è farti provare, scegliere e portare a casa il materasso giusto per te, seguendoti anche dopo l'acquisto.</p>
+  </div>
+</section>
+
+<hr>
+
+<section class="bg-white">
+  <div class="wrap">
+    <p style="font-size:15.5px;">I clienti che ci hanno scelto hanno particolarmente apprezzato la nostra:</p>
+    <div class="pillars">
+      <p><b>Prova reale:</b> ti sdrai davvero sui modelli in showroom prima di scegliere.</p>
+      <p><b>Trasparenza:</b> preventivo chiaro dopo la consulenza, senza costi nascosti.</p>
+      <p><b>Su misura:</b> materasso costruito sulla tua schiena, non preso da uno scaffale.</p>
+      <p><b>Assistenza:</b> stesso referente prima e dopo l'acquisto.</p>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<div class="pin">📍 Operiamo a Piove di Sacco e nei comuni limitrofi</div>
+
+<hr>
+
+<section class="bg-white">
+  <div class="wrap">
+    <h2 style="font-size:23px;">Come funziona?</h2>
+    <ol class="steps">
+      <li><b>Prenoti la visita gratuita:</b> compili il modulo in questa pagina, ti richiamiamo entro 24 ore.</li>
+      <li><b>Provi e scegli con un consulente:</b> ti sdrai sui modelli e definiamo materiali, altezza e rigidità.</li>
+      <li><b>Costruiamo il tuo materasso:</b> viene assemblato su misura in base a quello che hai scelto.</li>
+      <li><b>Consegna e montaggio:</b> lo portiamo a casa e ritiriamo il vecchio materasso.</li>
+    </ol>
+    <a class="btn" href="#form">Perfetto, prenoto la mia visita!</a>
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <div class="wrap">
+    <h2 style="font-size:23px;">Il tuo materasso ha più di 8-10 anni?</h2>
+    <ul class="plain">
+      <li>Con gli anni perde portanza: la schiena non è più sostenuta come i primi mesi, anche se sembra ancora "in buono stato".</li>
+      <li>Acari e umidità si accumulano nel tempo, soprattutto sui modelli senza trattamenti anti-acaro.</li>
+      <li>Un materasso sbagliato per il tuo peso o la tua posizione può causare risvegli notturni e mal di schiena al mattino.</li>
+    </ul>
+  </div>
+</section>
+
+<hr>
+
+<section class="bg-white">
+  <div class="wrap">
+    <h2 style="font-size:23px;">Il negozio dove torni, non un numero verde</h2>
+    <p style="margin-top:14px;font-size:15.5px;">Ogni materasso su misura è coperto da garanzia sui materiali. Se qualcosa non va, non apri un ticket: vieni in negozio e parli con chi te lo ha venduto.</p>
+    <a class="btn" href="#form">Prenota la tua visita senza impegno</a>
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <div class="wrap">
+    <h2 style="font-size:23px;">COSA DICONO I NOSTRI CLIENTI</h2>
+    <div style="margin-top:10px;">
+      <div class="test">
+        <div class="stars">★★★★★</div>
+        <p>Ho comprato un materasso da Nicola e Maurizio, da un anno che lo sto utilizzando e dormo come un ghiro! Consigliatissimo</p>
+        <div class="who">Michele Nardo <span>— 4 mesi fa</span></div>
+      </div>
+      <div class="test">
+        <div class="stars">★★★★★</div>
+        <p>Ho scelto il materasso da sogni e sogni insieme ad una fisioterapista che ti fornisce il negozio gratuitamente e ora ho risolto dei problemi con il dormire bene che mi portavo dietro da anni! Un servizio che non ho trovato mai da nessuna parte!</p>
+        <div class="who">duplex srl <span>— 4 mesi fa</span></div>
+      </div>
+      <div class="test">
+        <div class="stars">★★★★★</div>
+        <p>Abbiamo acquistato il nostro materasso e rete matrimoniale presso questo negozio, cortesia, disponibilità e semplicità nel spiegare le varie tipologie di materassi al . Nicola ed il fratello ci hanno indicato quale fosse l' articolo più indicato alle nostre esigenze, grazie alla loro pluriennale esperienza. Consegna veloce come da accordi. Dopo una settimana di dormite nel nuovo materasso, sentiamo la differenza. Beh, che dire, noi lo consigliamo vivamente.</p>
+        <div class="who">Marika <span>— 10 mesi fa</span></div>
+      </div>
+      <div class="test">
+        <div class="stars">★★★★★</div>
+        <p>Buonasera volevo mettere la mia impressione che ho avuto dell'acquisto del mio nuovo matterasso a molle con memori acquistato in negozio sogni&amp;sogni piove di sacco , circa 10 giorni di utilizzo dopo avermi abituato mi è sparito il mal di schiena lombare dalla postura mentre dormo sul fianco ,che mi era venuto fuori dal mio vecchio materasso. E grazie a l'esperienza di Nicola e di suo fratello mi hanno consigliato subito in base al mio peso che tipo di materasso andasse bene per me , hanno fatto centro mi è sparito il mal di schiena e mi sveglio alla mattina bello riposato da qui si vede la professionalità e la passione di Nicola, nel suo settore e ve lo consiglio a tutti . Cordiali saluti.</p>
+        <div class="who">Federico Masut <span>— un anno fa</span></div>
+      </div>
+      <div class="test">
+        <div class="stars">★★★★★</div>
+        <p>Sono andata da sogni e sogni sconfortata xche ho già cambiato due materassi in poco tempo xche io e mio marito non dormivamo bene, tante promesse ma di fatto un totale fallimento. Ho deciso di andare a piove di sacco da sogni e sogni guidata dal mio istinto anche se amareggiata e con la paura di ributtare via i soldi x l'ennesima volta e invece ho trovato una persona molto competente e umile che mi ha consigliato benissimo,ho preso il materasso e mi sono trovata benissimo e mio marito che ha anche problemi di schiena seri ha cominciato finalmente ha dormire benissimo trovando pace nei suoi dolori ,ringrazio tantissimo sogni e sogni x aver risolto il nostro problema finalmente x sempre,questo negozio lo consiglio vivamente in tutte le sue competenze,sono rimasti pochissimi i negozi che sono professionali seri e veritieri in quello che consigliano sono finalmente felice e soddisfatta dell acquisto ma sopratutto x la persona che mi ha saputo consigliare grazie di</p>
+        <div class="who">Chiara Casson <span>— 3 settimane fa</span></div>
+      </div>
+      <div class="test">
+        <div class="stars">★★★★★</div>
+        <p>Materasso rotondo super confortevole fatto su misura. Cercato rivenditori nessuno mi ha proposto un prodotto così buono a un prezzo così conveniente . Complimenti ai fratelli che gestiscono un negozio molto fornito</p>
+        <div class="who">adriano dark <span>— un anno fa</span></div>
+      </div>
+      <div class="test">
+        <div class="stars">★★★★★</div>
+        <p>Personale accogliente, disponibile e professionale. Io ho acquistato il mio primo materasso qualche anno fa e soddisfatta dai consigli ricevuti e dal materasso ne ho preso uno anche per mio figlio, letto e materasso, contento pure lui. Se avete bisogno di cambiare letto/materasso e non solo vi consiglio Sogni &amp; Sogni a Piove di Sacco, qualità e prezzi ottimi</p>
+        <div class="who">Claudia Simoni <span>— un anno fa</span></div>
+      </div>
+      <div class="test">
+        <div class="stars">★★★★★</div>
+        <p>Abbiamo comprato un materasso singolo (memory) per il letto di nostro figlio dopo l'esperienza di poco più di due anni fa quando abbiamo preso il materasso matrimoniale ( molle). Non abbiamo avuto nessun dubbio a ritornare sia per la qualità del prodotto (alta) sia per la cortesia, la preparazione e la disponibilità del personale. I prezzi sono ottimi considerando la qualità del prodotto.</p>
+        <div class="who">enrico grassetto <span>— 2 anni fa</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="bg-white" id="form">
+  <div class="wrap">
+    <h2 style="font-size:23px;">Richiedi ora la tua prova gratuita!</h2>
+    <p style="margin-top:10px;font-size:15.5px;">Compila il modulo qui sotto: ti richiamiamo entro 24 ore per fissare l'appuntamento a Piove di Sacco.</p>
+    <div class="form-box">
+      <label>Nome e cognome</label>
+      <input type="text" placeholder="Mario Rossi">
+      <label>Telefono</label>
+      <input type="tel" placeholder="333 1234567">
+      <label>Sei interessato a</label>
+      <select>
+        <option>Materasso su misura</option>
+        <option>Poltrona relax</option>
+        <option>Letto o rete</option>
+        <option>Ausili medici</option>
+        <option>Non so ancora, voglio informazioni</option>
+      </select>
+      <div class="check">
+        <input type="checkbox">
+        <span>Confermo di abitare a Piove di Sacco o in un comune limitrofo</span>
+      </div>
+      <div class="check">
+        <input type="checkbox">
+        <span>Presto il consenso per l'utilizzo dei miei dati esclusivamente per essere ricontattato dal negozio</span>
+      </div>
+      <button class="btn">INVIA RICHIESTA</button>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <div class="wrap">
+    <h2 style="font-size:23px;">DOMANDE FREQUENTI - FAQ</h2>
+    <div style="margin-top:10px;">
+      <details class="faq" open>
+        <summary>Quanto costa un materasso su misura?</summary>
+        <p>Dipende dai materiali e dalla misura che scegli in showroom. Dopo la prova ti prepariamo un preventivo preciso e scritto: nessun costo nascosto aggiunto dopo.</p>
+      </details>
+      <details class="faq">
+        <summary>Devo per forza venire in negozio?</summary>
+        <p>Sì, ed è il punto: un materasso si sceglie provandolo. La visita e la consulenza sono gratuite e senza impegno.</p>
+      </details>
+      <details class="faq">
+        <summary>Quanto tempo serve per avere il materasso pronto?</summary>
+        <p>Dipende dal modello scelto e dai materiali. Te lo indichiamo con precisione al momento dell'ordine.</p>
+      </details>
+      <details class="faq">
+        <summary>Ritirate il vecchio materasso?</summary>
+        <p>Sì, il ritiro e lo smaltimento del vecchio materasso sono compresi nel servizio di consegna.</p>
+      </details>
+      <details class="faq">
+        <summary>Vendete anche poltrone relax e ausili medici?</summary>
+        <p>Sì, in showroom trovi anche poltrone relax, letti, reti e ausili medici, oltre ai materassi.</p>
+      </details>
+      <details class="faq">
+        <summary>In che zona consegnate?</summary>
+        <p>Piove di Sacco e i comuni limitrofi. Se abiti più lontano, contattaci comunque: valutiamo insieme la soluzione migliore.</p>
+      </details>
+      <details class="faq">
+        <summary>Si può pagare a rate?</summary>
+        <p>Sì, offriamo la possibilità di rateizzare l'acquisto. Ne parliamo insieme durante la consulenza in negozio.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="bg-white">
+  <div class="wrap contatti">
+    <p><b>I nostri contatti:</b></p>
+    <p>P.IVA: 04574260289</p>
+    <p><a href="mailto:info@sogniesogni.it">info@sogniesogni.it</a></p>
+    <p><b>Nicola</b> — Vendite e consulenza — <a href="tel:+393762265245">376 226 5245</a></p>
+    <p style="margin-top:14px;"><b>Dove puoi trovarci:</b></p>
+    <p>Sogni&amp;Sogni<br>Via S. Pio X, 35028<br>Piove di Sacco (PD)</p>
+  </div>
+</section>
+
+<footer>
+  © Sogni&amp;Sogni | Piove di Sacco — All rights reserved.<br>
+  Materassi - Poltrone relax - Letti e reti - Ausili medici
+</footer>
+
+<div class="floaters">
+  <a class="wa" href="https://wa.me/393762265245" aria-label="WhatsApp">💬</a>
+  <a class="call" href="tel:+393762265245" aria-label="Chiama">📞</a>
+</div>
+
+</body>
+</html>
