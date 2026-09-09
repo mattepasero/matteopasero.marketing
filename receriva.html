@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recensioni Google — Riva Lombardi Sciortino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#e9e2d3;
+    --stone-light:#f4efe4;
+    --ink:#20261f;
+    --ink-soft:#3c4438;
+    --brass:#96763a;
+    --verdigris:#56675b;
+    --line: rgba(32,38,31,0.12);
+    --white:#faf7ef;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--stone);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:32px 24px;
+  }
+  .grid{
+    columns:2;
+    column-gap:20px;
+  }
+  @media (max-width:640px){ .grid{columns:1;} }
+
+  .card{
+    break-inside:avoid;
+    background:var(--stone-light);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:22px 22px 20px;
+    margin-bottom:20px;
+  }
+  .card-top{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:12px;
+  }
+  .avatar{
+    width:36px;height:36px;
+    border-radius:50%;
+    background:var(--verdigris);
+    color:var(--white);
+    font-family:'Fraunces',serif;
+    font-size:14px;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .who{min-width:0;}
+  .name{
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .date{font-size:12px;color:var(--ink-soft);}
+  .stars{display:inline-flex;gap:2px;margin-bottom:10px;}
+  .stars svg{width:15px;height:15px;}
+  .star-fill{fill:var(--brass);}
+  .star-empty{fill:none;stroke:var(--brass);stroke-width:1.4;}
+  .card p{
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--ink-soft);
+    margin:0;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="grid" id="grid"></div>
+</div>
+
+<script>
+const reviews = [
+  {name:"Matteo Garrone", stars:5, date:"3 mesi fa", text:"Ci siamo rivolti a questa agenzia dopo una cattiva esperienza con un'altra agenzia del territorio. Si sono mostrati subito gentili e disponibili nel valutare l'immobile situato nella provincia di Asti che volevamo vendere. Dopo un primo sopralluogo, ci hanno invitato presso i loro uffici di Asti per mostrarci quelli che loro avevano individuato come punti di forza dell'immobile su cui puntare per la vendita. Abbiamo così deciso di affidare a loro l'incarico per la vendita. Sono stati capaci di creare un annuncio ben fatto con foto in grado di far comprendere da subito le caratteristiche dell'immobile. In pochi mesi sono riusciti a portare diverse persone interessate in visita e, poco dopo, ad averci comunicato che un paio di queste avevano deciso di fare una proposta d'acquisto. Accettata quella che a noi sembrava la più adeguata, in pochissimo tempo siamo riusciti a concludere la vendita con una coppia del Regno Unito. Professionalità, puntualità, gentilezza e disponibilità sono le caratteristiche che contraddistinguono questa agenzia che mi sento di consigliare a chiunque abbia la volontà di vendere un proprio immobile. Grazie ancora a tutto lo staff e al Sig. Mario Carlevero, nello specifico, che ha seguito la vendita dell'immobile."},
+  {name:"Lina Talluto", stars:5, date:"4 mesi fa", text:"Io e il mio futuro marito siamo rimasti piacevolmente soddisfatti del servizio. L'agente immobiliare che ci ha seguito in tutte le varie fasi, un ragazzo molto competente, gentile ma soprattutto sempre disponibile a rispondere a tutti i nostri dubbi e domande."},
+  {name:"Annalisa Boano", stars:5, date:"7 mesi fa", text:"Esperienza molto positiva. Grande professionalità unita a gentilezza, disponibilità e tanta pazienza. Sempre attenti alle esigenze del cliente e capaci di adattarsi alle richieste. Oltre all'aspetto professionale, spiccano anche per le loro doti umane e per l'ottima capacità di problem solving."},
+  {name:"sara giorcelli", stars:5, date:"3 mesi fa", text:"Ho venduto tramite questa agenzia la mia casa e devo dire che mi sono trovata benissimo... molto professionali e attenti alle esigenze sia del venditore che dell'acquirente... consiglio vivamente di contattare questa agenzia se volete acquistare o vendere casa... celeri e professionisti... aggiungo una stella per Mario che mi ha seguito in modo esemplare fino al giorno dell'atto e... anche dopo!"},
+  {name:"Beppino Costa", stars:5, date:"9 mesi fa", text:"Un grazie sincero all'agenzia immobiliare Riva, Lombardi, Sciortino che ha reso la vendita di un immobile, anche particolare come il nostro, un percorso spesso difficile e dispersivo, qualcosa di sorprendentemente semplice, quasi naturale. Fin dal primo passo ci siamo sentiti nelle mani giuste: servizio fotografico professionale che valorizzava ogni dettaglio, documentazione verificata e predisposta con scrupolo, contatti con i clienti gestiti con una cura che ti fa respirare, e poi quel filo sottile ma costante che arriva fino all'assistenza al rogito notarile, senza mai lasciarci soli. Un pensiero speciale va a Rosario e Vittoria: due presenze luminose, capaci di unire simpatia e professionalità in un equilibrio raro. Ci hanno accompagnati con passo sicuro verso il risultato che ci eravamo prefissati, come compagni di viaggio più che semplici intermediari. Un'esperienza serena, umana, ben orchestrata. Un'agenzia che lavora con testa, cuore e competenza. Consigliatissimi."},
+  {name:"Monica Gatti", stars:5, date:"un anno fa", text:"Vogliamo ringraziare di cuore Rosario e Vittoria per l'eccellente lavoro svolto nella vendita della nostra casa. Fin dal primo contatto abbiamo trovato un team di veri professionisti: attenti, disponibili e pronti a rispondere alle nostre esigenze. La vendita è stata gestita con la massima serietà e in tempi davvero rapidi, superando le nostre aspettative. Abbiamo apprezzato molto la trasparenza, la cura dei dettagli e la capacità di accompagnarci passo dopo passo in ogni fase, facendoci sentire seguiti e al sicuro. È raro incontrare persone che uniscono competenza e umanità: per questo consigliamo senza alcun dubbio questa agenzia a chiunque desideri vendere o acquistare casa affidandosi a professionisti di altissimo livello. Tiziano e Monica"},
+  {name:"G G", stars:5, date:"un anno fa", text:"Ho affidato la mia villa di campagna in Monferrato all'agenzia Riva Lombardi Sciortino srl e in sei mesi è stata venduta a dei clienti americani. La professionalità, la puntualità e soprattutto la conoscenza del territorio da parte del sig. Riva Riccardo sono stati una garanzia. Consiglio vivamente l'agenzia a tutti per eventuali vendite o acquisti nel Monferrato e nelle Langhe."},
+  {name:"Anna Zanotto", stars:5, date:"4 mesi fa", text:"Ho incaricato l'agenzia Riva Lombardi Sciortino di vendere casa e sono rimasta molto contenta di come sono stati bravi e competenti nel loro lavoro. Specialmente Mario Carlevero si è messo sempre a disposizione in qualunque momento per la vendita, veramente un bravo ragazzo di fiducia. Ci ha accompagnati sempre fino alla fine. Ringrazio tutti!"},
+  {name:"Sara Delpero", stars:5, date:"9 mesi fa", text:"Mi sono trovata molto bene con questa agenzia. Rosario si è dimostrato sempre disponibile, competente e attento alle esigenze del cliente. Ho apprezzato la professionalità e il supporto costante durante tutto il percorso. Consiglio questa agenzia perché sa davvero stare vicino al cliente e rende l'esperienza di compravendita molto più serena."},
+  {name:"Fabio Bellofiore", stars:5, date:"4 mesi fa", text:"Seguito nella compravendita con costanza e serietà, nessuna sorpresa, tutto chiaro fin dall'inizio. Un buon lavoro davvero."},
+  {name:"Alberto Clerico", stars:5, date:"9 mesi fa", text:"Ho venduto casa attraverso questa agenzia e sono rimasto colpito dalla rapidità e dall'organizzazione. Hanno gestito tutto con attenzione ai dettagli e grande professionalità. Servizio eccellente sotto ogni aspetto!"},
+  {name:"domenico iermieri", stars:5, date:"4 mesi fa", text:"Casa venduta in tempi brevissimi. Mario Carlevero ottimo venditore. Consigliato."},
+  {name:"Flavio Bruzzesi", stars:5, date:"un anno fa", text:"Personale molto professionale, affidabile e completamente preparato ad affrontare le eventuali problematiche che possono insorgere durante una compravendita. Molto soddisfatto per l'attività di vendita svolta. Certamente da considerare e/o proporre per altre transazioni immobiliari."},
+  {name:"Marina Bianchi", stars:5, date:"un anno fa", text:"Mi sono trovata molto bene, direi che i punti di forza sono la cortesia e la disponibilità anche fuori dagli orari canonici di ufficio. Rosario è una persona super gentile. Agenzia seria ed efficiente, la consiglio assolutamente."},
+  {name:"Valentina Rossi", stars:5, date:"un anno fa", text:"Con questa agenzia sono riuscita a vendere la mia casa, non facile da vendere, realizzando il giusto prezzo. Agenzia molto affidabile, ragazzi tutti alla mano e disponibili."},
+  {name:"Alex", stars:5, date:"9 mesi fa", text:"Serietà e professionalità... in meno di 3 mesi hanno trovato l'immobile giusto per me e mi hanno portato a rogito!!!"},
+  {name:"ANNA PALIS", stars:5, date:"un anno fa", text:"Grande professionalità, disponibili e attenti alle esigenze dell'acquirente e del venditore."},
+  {name:"Maura Satta Flores", stars:5, date:"2 anni fa", text:"Riccardo ha trovato la casa dei nostri sogni e della nostra vita, non gli saremo mai grati abbastanza!"},
+  {name:"Laura Carretto", stars:5, date:"3 anni fa", text:"Consulenza impeccabile, professionale, discreta e preparata. Soluzioni immobiliari sempre volte all'eccellenza!"},
+  {name:"China Moni", stars:5, date:"3 anni fa", text:"Ottimo servizio, ma soprattutto attenti alle esigenze del cliente."},
+  {name:"LOMBARDI Lampadari", stars:5, date:"3 anni fa", text:"Una agenzia top. Ho trovato case da sogno."},
+  {name:"John Kenagy", stars:5, date:"7 mesi fa", text:"Servizio eccezionale da parte di Rosario Sciortino! Sono un cliente molto soddisfatto di questo fantastico studio e lo consiglio vivamente. Mi sono sentito supportato in modo eccezionale durante tutto il processo di offerta e acquisto. Rosario e il suo team mi hanno guidato in ogni fase, assicurandosi che fossi sempre completamente informato, comprendendo appieno le mie speranze e i miei sogni e realizzandoli con una splendida casa ad Asti. Rosario è professionale e con una grande esperienza. Conosce molto bene la zona e, dopo la vendita, mi ha messo in contatto con servizi di alta qualità e altre risorse per l'acquisto della mia nuova casa. Sono davvero grato per la sua sincera cura e guida durante tutto questo processo. Vorrei poter dare sei stelle!"},
+  {name:"Evelien Van Zwam", stars:5, date:"un anno fa", text:"Mario e il suo team ci sono stati di grande aiuto per l'acquisto della nostra prima casa in Italia. Non solo ci hanno assistito nella chiusura dell'affare, ma si sono presi cura anche della nostra agenzia dopo la consegna delle chiavi. Consiglio vivamente questo studio."},
+  {name:"Reinier Blonk", stars:5, date:"un anno fa", text:"Quando si acquista una casa in Piemonte da stranieri, è importante potersi affidare a un'agenzia immobiliare di fiducia. RLS è proprio questo tipo di partner: semplifica il processo di acquisto, anticipando e risolvendo molti ostacoli prima che possano diventare un problema. Inoltre, offre servizi aggiuntivi per assistervi anche dopo l'acquisto. Un partner indispensabile!"}
+];
+
+function starSvg(filled){
+  return filled
+    ? '<svg viewBox="0 0 20 20"><path class="star-fill" d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>'
+    : '<svg viewBox="0 0 20 20"><path class="star-empty" d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>';
+}
+function starsHtml(n){
+  let h = '';
+  for(let i=1;i<=5;i++) h += starSvg(i<=n);
+  return h;
+}
+function initials(name){
+  const parts = name.trim().split(/\s+/);
+  return ((parts[0]?.[0]||'') + (parts[1]?.[0]||'')).toUpperCase();
+}
+
+const gridEl = document.getElementById('grid');
+reviews.forEach(r => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML =
+    '<div class="card-top">' +
+      '<div class="avatar">' + initials(r.name) + '</div>' +
+      '<div class="who">' +
+        '<div class="name">' + r.name + '</div>' +
+        '<div class="date">' + r.date + '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="stars">' + starsHtml(r.stars) + '</div>' +
+    '<p>' + r.text + '</p>';
+  gridEl.appendChild(card);
+});
+</script>
+</body>
+</html>
