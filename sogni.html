@@ -283,7 +283,7 @@
   </section>
 
   <section id="form">
-    <form class="form-section" onsubmit="window.location.href='thank-you-sogni.html'; return false;">
+    <form class="form-section" id="lead-form">
       <h3>Vieni a provare i materassi in negozio!</h3>
       <p>Compila il modulo qui sotto: ti contattiamo per fissare una visita in negozio a Piove di Sacco.</p>
       <input type="text" name="nome" placeholder="Nome e cognome" required>
@@ -356,6 +356,29 @@
     <span class="icon">✓</span> Lascia un contatto
   </a>
 </div>
-
+<script>
+document.getElementById('lead-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var form = e.target;
+  var data = {
+    nome: form.nome.value,
+    telefono: form.telefono.value,
+    email: form.email.value,
+    area_raggiungibile: document.getElementById('check-area').checked,
+    consenso_privacy: document.getElementById('check-privacy').checked,
+    pagina: window.location.href,
+    data_invio: new Date().toISOString()
+  };
+  fetch('https://hook.eu2.make.com/61vnh4mc7u2q234ttz9euyjy23a29458', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).catch(function (err) {
+    console.error('Invio al webhook fallito:', err);
+  }).finally(function () {
+    window.location.href = 'thank-you-sogni.html';
+  });
+});
+</script>
 </body>
 </html>
