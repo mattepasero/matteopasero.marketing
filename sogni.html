@@ -3,19 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Materasso su Misura a Piove di Sacco | 200 € di Rottamazione | Sogni & Sogni</title>
-<meta name="description" content="Porti il vecchio materasso e hai 200 € di sconto sul nuovo, costruito su misura. Topper e cuscini in omaggio, tasso zero fino a 24 mesi. Negozio a Piove di Sacco (PD).">
+<title>Materasso su Misura a Piove di Sacco | Sogni & Sogni</title>
+<meta name="description" content="Prenota la tua visita in negozio a Piove di Sacco e provi dal vivo il materasso su misura giusto per te. In regalo le fodere dei cuscini.">
 <meta name="theme-color" content="#1F1F26">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img-sogni/hero-materasso.jpg">
 
-<!-- Google tag (gtag.js) -->
+<!-- Google tag (Google Ads) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18415601572"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-18415601572');
 </script>
 
@@ -23,23 +24,23 @@
   :root{
     --dark:#1F1F26;
     --accent:#C97B4A;
+    --accent-dark:#a9612f;
     --text-dark:#1a1a1a;
     --text-light:#f5f5f5;
     --muted:#6b6b70;
     --border:#e6e6e6;
+    --cream:#faf7f2;
     --radius:14px;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{
     font-family:'Poppins',-apple-system,BlinkMacSystemFont,sans-serif;
-    color:var(--text-dark);
-    background:#fff;
-    padding-bottom:76px; /* spazio per barra fissa */
+    color:var(--text-dark);background:#fff;padding-bottom:76px;
   }
   img{max-width:100%;display:block;}
   .container{max-width:480px;margin:0 auto;padding:0 20px;}
-  section{padding:32px 0;}
+  section{padding:36px 0;}
   .container > section{border-top:1px solid var(--border);}
   .container > section:first-child{border-top:none;}
   h1,h2,h3{line-height:1.25;font-weight:800;}
@@ -50,133 +51,89 @@
   strong{font-weight:700;}
 
   /* HERO */
-  .hero-wrap{background:var(--dark);color:var(--text-light);padding-bottom:8px;}
-  .eyebrow{
-    text-align:center;font-size:.78rem;letter-spacing:.14em;font-weight:700;
-    color:var(--accent);padding:16px 20px 4px;text-transform:uppercase;
-  }
-  .badge-esclusiva{
-    text-align:center;font-size:.95rem;font-weight:700;text-transform:uppercase;
-    padding:4px 20px 16px;color:var(--text-light);opacity:.9;
-  }
-  .hero-copy{padding:28px 20px 22px;text-align:center;}
-  .hero-copy h1{margin-bottom:10px;text-transform:uppercase;}
+  .hero-wrap{background:var(--dark);color:var(--text-light);}
+  .eyebrow{text-align:center;font-size:.78rem;letter-spacing:.14em;font-weight:700;color:var(--accent);padding:16px 20px 4px;text-transform:uppercase;}
+  .badge-esclusiva{text-align:center;font-size:.9rem;font-weight:700;text-transform:uppercase;padding:2px 20px 0;opacity:.9;}
+  .hero-copy{padding:26px 20px 18px;text-align:center;max-width:640px;margin:0 auto;}
+  .hero-copy h1{margin-bottom:12px;text-transform:uppercase;}
   .hero-copy p{opacity:.92;margin-bottom:16px;}
-  .gift-highlight{
-    display:inline-block;background:var(--accent);color:#fff;font-weight:700;
-    font-size:.9rem;text-transform:uppercase;padding:10px 18px;border-radius:999px;margin-bottom:8px;
-    text-decoration:none;
-  }
-  .gift-sub{font-size:.8rem;opacity:.75;margin-bottom:0;}
-
-  /* PROMO ROTTAMAZIONE */
-  .promo-wrap{background:var(--dark);color:var(--text-light);padding:30px 0 34px;border-top:3px solid var(--accent);}
-  .promo-inner{max-width:480px;margin:0 auto;padding:0 20px;text-align:center;}
-  .promo-tag{
-    display:inline-block;background:var(--accent);color:#fff;font-weight:800;
-    font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
-    padding:7px 16px;border-radius:999px;margin-bottom:16px;
-  }
-  .promo-amount{font-size:3.4rem;font-weight:800;line-height:1;color:var(--accent);}
-  .promo-amount span{
-    display:block;font-size:1rem;font-weight:700;color:var(--text-light);
-    margin-top:8px;text-transform:uppercase;letter-spacing:.04em;line-height:1.3;
-  }
-  .promo-sub{font-size:.95rem;opacity:.9;margin:16px 0 20px;}
-  .promo-perks{list-style:none;text-align:left;margin-bottom:22px;}
-  .promo-perks li{
-    padding:11px 0 11px 30px;position:relative;font-size:.94rem;
-    border-bottom:1px solid rgba(255,255,255,.12);
-  }
-  .promo-perks li:last-child{border-bottom:none;}
-  .promo-perks li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800;}
-  .promo-note{font-size:.78rem;opacity:.6;margin-top:14px;}
-
-  /* QUANDO CAMBIARLO */
-  .swap-list{list-style:none;margin-top:12px;}
-  .swap-list li{padding:9px 0 9px 22px;position:relative;font-size:.96rem;}
-  .swap-list li::before{content:"—";position:absolute;left:0;color:var(--accent);font-weight:700;}
-
-  /* CTA BUTTON */
-  .btn-cta{
-    display:flex;align-items:center;justify-content:center;gap:8px;
-    background:var(--accent);color:#fff;font-weight:700;text-decoration:none;
-    padding:15px 20px;border-radius:999px;font-size:1rem;text-align:center;
-    box-shadow:0 6px 16px rgba(0,0,0,.15);
-  }
-  .cta-wrap{padding:18px 0 4px;}
-
-  /* FORM */
-  .form-section{background:var(--dark);color:var(--text-light);border-radius:var(--radius);padding:26px 20px;}
-  .form-section h3{margin-bottom:4px;}
-  .form-gift{
-    display:inline-block;background:var(--accent);color:#fff;font-weight:700;
-    font-size:.78rem;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:14px;
-  }
-  .form-section p.form-sub{opacity:.9;margin-bottom:16px;font-size:.94rem;}
-  .form-section input[type=text],
-  .form-section input[type=tel],
-  .form-section input[type=email]{
-    width:100%;padding:13px 14px;border-radius:10px;border:none;margin-bottom:12px;font-size:1rem;
-    font-family:inherit;
-  }
-  .checkbox-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;font-size:.85rem;opacity:.9;}
-  .checkbox-row input{margin-top:3px;}
-  .btn-submit{
-    width:100%;background:var(--accent);color:#fff;border:none;padding:15px;border-radius:999px;
-    font-weight:700;font-size:1rem;font-family:inherit;cursor:pointer;
-  }
-  .form-note{font-size:.78rem;opacity:.7;margin-top:10px;text-align:center;}
+  .rating{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;margin-bottom:18px;opacity:.95;}
+  .rating .stars{color:#f5a623;letter-spacing:1px;}
+  .bonus-highlight{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:.9rem;text-transform:uppercase;padding:10px 18px;border-radius:999px;text-decoration:none;}
+  .hero-photo{background:#fff;}
+  .hero-photo .inner{max-width:600px;margin:0 auto;padding:14px 20px 0;}
+  .hero-photo img{width:100%;height:auto;max-height:170px;object-fit:contain;}
+  @media (min-width:600px){.hero-photo img{max-height:240px;}}
+  .hero-photo .caption{text-align:center;font-size:.82rem;color:var(--muted);padding:4px 20px 0;}
 
   /* OFFERTA */
   .offer-title{text-align:center;font-size:1.05rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:18px;}
   .offer-list{list-style:none;counter-reset:offer;}
-  .offer-list li{
-    counter-increment:offer;position:relative;padding:10px 0 10px 40px;
-    border-bottom:1px solid var(--border);font-size:.98rem;
-  }
+  .offer-list li{counter-increment:offer;position:relative;padding:10px 0 10px 40px;border-bottom:1px solid var(--border);font-size:.98rem;line-height:1.5;}
   .offer-list li:last-child{border-bottom:none;}
-  .offer-list li::before{
-    content:counter(offer);position:absolute;left:0;top:8px;
-    width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;
-    font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;
-  }
+  .offer-list li::before{content:counter(offer);position:absolute;left:0;top:10px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;}
 
-  .area-note{font-style:italic;color:var(--muted);font-size:.92rem;text-align:center;padding:4px 0 0;}
+  /* CTA */
+  .btn-cta{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;padding:15px 20px;border-radius:999px;font-size:1rem;text-align:center;box-shadow:0 6px 16px rgba(0,0,0,.15);}
+  .cta-wrap{padding:22px 0 8px;}
+  .area-note{font-style:italic;color:var(--muted);font-size:.92rem;text-align:center;padding:10px 0 0;}
 
-  .models-sub{text-align:center;color:var(--muted);font-size:.92rem;margin-bottom:18px;}
+  /* MATERASSI */
+  .models-head{text-align:center;margin-bottom:6px;}
+  .models-sub{text-align:center;color:var(--muted);font-size:.93rem;margin-bottom:18px;}
+  .line-label{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:8px 0 10px;}
+  .models{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 14px;margin:0 -20px;padding-left:20px;padding-right:20px;-webkit-overflow-scrolling:touch;}
+  .models::-webkit-scrollbar{height:6px;}
+  .models::-webkit-scrollbar-thumb{background:#ddd;border-radius:3px;}
+  .model{flex:0 0 76%;scroll-snap-align:start;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff;display:flex;flex-direction:column;}
+  .model img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;background:#fff;flex-shrink:0;}
+  .model .body{padding:12px 14px 16px;border-top:1px solid var(--border);}
+  .model .tag{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;background:var(--cream);color:var(--accent-dark);padding:4px 10px;border-radius:999px;margin-bottom:8px;}
+  .model p{font-size:.9rem;line-height:1.5;color:#333;}
+  .swipe-hint{font-size:.8rem;color:var(--muted);text-align:right;margin-top:-4px;margin-bottom:14px;}
+  .tempur-note{font-size:.85rem;color:var(--muted);margin-bottom:10px;}
 
   /* MISURE */
-  .sizes-box{background:#faf7f2;border-radius:var(--radius);padding:20px;}
-  .sizes-box h3{text-align:center;margin-bottom:6px;}
-  .sizes-box .models-sub{margin-bottom:16px;}
-  .size-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px;}
-  .size-chip{
-    background:#fff;border:1px solid var(--border);border-radius:10px;padding:10px 8px;
-    text-align:center;font-size:.88rem;font-weight:600;
-  }
-  .size-chip span{display:block;font-size:.72rem;font-weight:400;color:var(--muted);margin-top:2px;}
-  .sizes-note{font-size:.9rem;text-align:center;color:#333;}
+  .sizes{background:var(--cream);border-radius:var(--radius);padding:22px 18px;text-align:center;}
+  .sizes h3{margin-bottom:6px;}
+  .sizes > p{color:var(--muted);font-size:.92rem;margin-bottom:16px;}
+  .size-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+  .size-grid div{background:#fff;border:1px solid var(--border);border-radius:10px;padding:10px 6px;}
+  .size-grid strong{display:block;font-size:.95rem;}
+  .size-grid span{font-size:.78rem;color:var(--muted);}
+  .sizes .small{font-size:.88rem;color:#333;text-align:left;}
 
   /* GARANZIA */
-  .warranty{background:#faf7f2;border-radius:var(--radius);padding:22px 20px;text-align:center;}
+  .warranty{background:var(--cream);border-radius:var(--radius);padding:22px 20px;text-align:center;}
   .warranty h3{color:var(--accent);margin-bottom:10px;}
 
   /* RECENSIONI */
-  .reviews-title{text-align:center;text-transform:uppercase;margin-bottom:18px;}
-  .review-card{
-    background:#fafafa;border-radius:var(--radius);padding:16px 18px;margin-bottom:14px;
-  }
+  .reviews-title{text-align:center;text-transform:uppercase;margin-bottom:6px;}
+  .reviews-sub{text-align:center;color:var(--muted);font-size:.92rem;margin-bottom:18px;}
+  .review-card{background:#fafafa;border-radius:var(--radius);padding:16px 18px;margin-bottom:14px;}
   .review-card h3{font-size:1rem;margin-bottom:4px;}
   .review-card p{font-style:italic;font-size:.94rem;color:#333;margin-bottom:6px;}
   .stars{color:#f5a623;letter-spacing:2px;}
 
+  /* FORM */
+  .form-section{background:var(--dark);color:var(--text-light);border-radius:var(--radius);padding:26px 20px;}
+  .form-section h3{margin-bottom:8px;}
+  .form-gift{display:inline-block;background:var(--accent);color:#fff;font-size:.78rem;font-weight:700;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:12px;}
+  .form-section p{opacity:.9;margin-bottom:16px;font-size:.94rem;}
+  .form-section input[type=text],.form-section input[type=tel],.form-section input[type=email]{width:100%;padding:13px 14px;border-radius:10px;border:none;margin-bottom:12px;font-size:1rem;font-family:inherit;}
+  .checkbox-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;font-size:.85rem;opacity:.9;}
+  .checkbox-row input{margin-top:3px;flex-shrink:0;}
+  .btn-submit{width:100%;background:var(--accent);color:#fff;border:none;padding:15px;border-radius:999px;font-weight:700;font-size:1rem;font-family:inherit;cursor:pointer;}
+  .btn-submit[disabled]{opacity:.7;cursor:wait;}
+  .form-foot{font-size:.82rem;opacity:.8;text-align:center;margin-top:12px;margin-bottom:0 !important;}
+  .form-error{display:none;background:#fff3f0;color:#7a2a14;border-radius:10px;padding:12px 14px;font-size:.9rem;line-height:1.5;margin-bottom:12px;}
+  .form-error a{color:#7a2a14;font-weight:700;}
+  .form-error.show{display:block;}
+
   /* FAQ */
   .faq-title{text-align:center;text-transform:uppercase;margin-bottom:16px;}
   details{border-bottom:1px solid var(--border);padding:12px 0;}
-  details summary{
-    font-weight:700;cursor:pointer;list-style:none;display:flex;gap:8px;font-size:.96rem;
-  }
+  details summary{font-weight:700;cursor:pointer;list-style:none;display:flex;gap:8px;font-size:.96rem;}
   details summary::-webkit-details-marker{display:none;}
   details summary::before{content:"❓";}
   details p{margin-top:8px;font-style:italic;color:#333;font-size:.94rem;}
@@ -190,21 +147,20 @@
   .footer-copy{margin-top:6px;font-size:.78rem;color:var(--muted);}
 
   /* BARRA FISSA */
-  .sticky-bar{
-    position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);
-    display:flex;z-index:50;box-shadow:0 -4px 12px rgba(0,0,0,.08);
-  }
-  .sticky-bar a{
-    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    padding:10px 4px;text-decoration:none;color:var(--text-dark);font-size:.7rem;font-weight:600;gap:3px;
-  }
-  .sticky-bar a.main{background:var(--accent);color:#fff;flex:1.3;}
+  .sticky-bar{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);display:flex;z-index:50;box-shadow:0 -4px 12px rgba(0,0,0,.08);}
+  .sticky-bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 4px;text-decoration:none;color:var(--text-dark);font-size:.72rem;font-weight:600;gap:3px;}
+  .sticky-bar a.main{background:var(--accent);color:#fff;flex:1.6;}
   .sticky-bar .icon{font-size:1.15rem;}
 
   @media (min-width:600px){
-    .container{max-width:600px;}
+    .container{max-width:640px;}
     h1{font-size:2rem;}
     h2{font-size:1.6rem;}
+    .model{flex:0 0 44%;}
+  }
+  @media (min-width:960px){
+    .models{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;margin:0;padding:0 0 10px;}
+    .swipe-hint{display:none;}
   }
 </style>
 </head>
@@ -215,37 +171,29 @@
   <div class="badge-esclusiva">Negozio a Piove di Sacco (PD)</div>
   <div class="hero-copy">
     <h1>Il tuo materasso su misura, costruito per te</h1>
-    <p>Analizziamo la tua postura con il laser e ti costruiamo il materasso su misura, con i materiali più evoluti oggi disponibili. E il vecchio materasso lo ritiriamo noi.</p>
-    <a class="gift-highlight" href="#promo">Rottami il vecchio e hai 200 € di sconto</a>
+    <p>Prenota la visita in negozio: analizziamo la tua postura con il laser, provi i materassi dal vivo e ti costruiamo quello su misura, con i materiali più evoluti oggi disponibili.</p>
+    <div class="rating"><span class="stars">★★★★★</span> 4,7 su Google</div><br>
+    <a class="bonus-highlight" href="#form">Prenota ora e ricevi in regalo le fodere dei cuscini</a>
   </div>
 </div>
 
-<div class="promo-wrap" id="promo">
-  <div class="promo-inner">
-    <div class="promo-tag">Rottamazione materasso</div>
-    <div class="promo-amount">200 €<span>di sconto sul nuovo materasso</span></div>
-    <p class="promo-sub">Porti in negozio il tuo vecchio materasso, lo ritiriamo noi e scali <strong>200 €</strong> sull'acquisto di quello nuovo, costruito su misura per te.</p>
-    <ul class="promo-perks">
-      <li><strong>Topper e cuscini in omaggio</strong> con il nuovo materasso</li>
-      <li><strong>Finanziamento a tasso zero</strong> fino a 24 mesi</li>
-      <li><strong>Check-up gratuito della postura</strong>, con laser e cuscino pneumatico</li>
-      <li><strong>Visita con fisioterapista e allergologo</strong>, su richiesta</li>
-    </ul>
-    <a class="btn-cta" href="#form">✓ Voglio i 200 € di sconto</a>
-    <p class="promo-note">Promozione valida in negozio, sul ritiro del vecchio materasso.</p>
+<div class="hero-photo">
+  <div class="inner">
+    <img src="img-sogni/hero-materasso.jpg" width="880" height="490" alt="Materasso Sogni & Sogni F3 Sprint 1000">
   </div>
+  <p class="caption">F3 Sprint 1000, uno dei materassi della linea Sogni &amp; Sogni</p>
 </div>
 
 <div class="container">
 
   <section id="form">
-    <form class="form-section" id="lead-form">
+    <form class="form-section" id="lead-form" novalidate>
       <h3>Prenota la tua visita</h3>
-      <span class="form-gift">200 € di sconto + topper e cuscini</span>
-      <p class="form-sub">Compila il modulo: ti richiamiamo per fissare l'appuntamento in negozio a Piove di Sacco e per dirti come portare il vecchio materasso.</p>
-      <input type="text" name="nome" placeholder="Nome e cognome" required>
-      <input type="tel" name="telefono" placeholder="Telefono" required>
-      <input type="email" name="email" placeholder="Email">
+      <span class="form-gift">🎁 In regalo le fodere dei cuscini</span>
+      <p>Compila il modulo: ti richiamiamo per fissare l'appuntamento in negozio a Piove di Sacco.</p>
+      <input type="text" name="nome" placeholder="Nome e cognome" autocomplete="name" required>
+      <input type="tel" name="telefono" placeholder="Telefono" autocomplete="tel" inputmode="tel" required>
+      <input type="email" name="email" placeholder="Email (facoltativa)" autocomplete="email">
       <div class="checkbox-row">
         <input type="checkbox" id="check-area" required>
         <label for="check-area">Confermo di poter raggiungere il negozio di Piove di Sacco (PD)</label>
@@ -254,65 +202,114 @@
         <input type="checkbox" id="check-privacy" required>
         <label for="check-privacy">Presto il consenso per l'utilizzo dei miei dati esclusivamente per il servizio richiesto</label>
       </div>
-      <button class="btn-submit" type="submit">Prenota la visita</button>
-      <p class="form-note">Nessun obbligo d'acquisto. Ti richiamiamo entro 24 ore.</p>
+      <div class="form-error" id="form-error" role="alert"></div>
+      <button class="btn-submit" type="submit" id="btn-submit">Prenota la visita e ricevi il regalo</button>
+      <p class="form-foot">Nessun obbligo d'acquisto. Ti richiamiamo entro 24 ore.</p>
     </form>
   </section>
 
   <section id="offerta">
     <div class="offer-title">Cosa trovi in negozio</div>
     <ol class="offer-list">
-      <li>Materassi <strong>di nostra produzione</strong>, con i materiali più evoluti oggi disponibili</li>
+      <li>I materassi della <strong>linea Sogni &amp; Sogni</strong> e i modelli <strong>Tempur®</strong>, da provare dal vivo con calma</li>
       <li><strong>Controllo della colonna vertebrale con il laser</strong> e analisi dei punti di spinta, per un preventivo su misura</li>
       <li>Il consiglio diretto di <strong>Nicola e Maurizio</strong></li>
       <li>Fino a <strong>10 anni di garanzia</strong> su ogni materasso</li>
       <li>Entro <strong>10 notti</strong>, se non sei soddisfatto, te lo ricostruiamo su misura senza pagarlo due volte</li>
     </ol>
-    <div class="cta-wrap">
-      <a class="btn-cta" href="#form">✓ Prenota la tua visita</a>
-    </div>
+    <div class="cta-wrap"><a class="btn-cta" href="#form">✓ Prenota la tua visita</a></div>
     <p class="area-note">📍 Via S. Pio X, Piove di Sacco (PD)</p>
   </section>
 
-  <section id="quando-cambiarlo">
-    <h3>Quando conviene cambiarlo</h3>
-    <p>Un materasso può sembrare ancora pulito e in ordine, ma dopo <strong>8-10 anni</strong> ha perso gran parte del sostegno. Il corpo affonda dove non dovrebbe e la schiena lavora tutta la notte invece di riposare.</p>
-    <ul class="swap-list">
-      <li>Ti svegli più stanco di quando sei andato a dormire</li>
-      <li>Senti il materasso cedere al centro o sotto i fianchi</li>
-      <li>Dormi meglio fuori casa che nel tuo letto</li>
-    </ul>
-    <p style="margin-top:14px;">Se il tuo ha più di otto anni, portalo da noi: lo ritiriamo e te lo scontiamo <strong>200 €</strong> sul nuovo.</p>
-    <div class="cta-wrap">
-      <a class="btn-cta" href="#form">✓ Prenota la tua visita</a>
+  <section id="materassi">
+    <h2 class="models-head">I materassi che provi in negozio</h2>
+    <p class="models-sub">Durante la visita ti facciamo provare quelli più adatti alla tua schiena e al tuo modo di dormire.</p>
+
+    <div class="line-label">Linea Sogni &amp; Sogni</div>
+    <div class="models">
+      <div class="model">
+        <img src="img-sogni/f3-sprint-1000.jpg" width="520" height="520" loading="lazy" alt="Materasso F3 Sprint 1000">
+        <div class="body"><span class="tag">Molle insacchettate</span>
+          <p>Sette zone di sostegno differenziato e memory di origine vegetale. Segue la colonna e si adatta ai movimenti.</p></div>
+      </div>
+      <div class="model">
+        <img src="img-sogni/f1-graphene.jpg" width="520" height="520" loading="lazy" alt="Materasso F1 Graphene">
+        <div class="body"><span class="tag">5 strati</span>
+          <p>Anima ergonomica a onde e rivestimento in fibra di carbonio.</p></div>
+      </div>
+      <div class="model">
+        <img src="img-sogni/f1-elite.jpg" width="520" height="520" loading="lazy" alt="Materasso F1 Elite">
+        <div class="body"><span class="tag">Ortopedico</span>
+          <p>Materasso ortopedico correttivo, con lavorazioni differenziate nelle diverse zone del corpo.</p></div>
+      </div>
+      <div class="model">
+        <img src="img-sogni/alfagen-hd.jpg" width="520" height="520" loading="lazy" alt="Materasso Alfagen HD">
+        <div class="body"><span class="tag">Sostegno profondo</span>
+          <p>Struttura multistrato che distribuisce il peso in modo uniforme e riduce i punti di pressione. Resta fresco e asciutto.</p></div>
+      </div>
+      <div class="model">
+        <img src="img-sogni/alfagen-sd.jpg" width="520" height="520" loading="lazy" alt="Materasso Alfagen SD">
+        <div class="body"><span class="tag">Più morbido</span>
+          <p>La versione più avvolgente: risposta dolce e anatomica, aiuta a sciogliere le tensioni muscolari.</p></div>
+      </div>
+      <div class="model">
+        <img src="img-sogni/four-sense.jpg" width="520" height="520" loading="lazy" alt="Materasso Four Sense">
+        <div class="body"><span class="tag">Fresco</span>
+          <p>Lastra ergonomica a quattro strati con fodera in Tencel™, per chi soffre il caldo di notte.</p></div>
+      </div>
     </div>
+    <p class="swipe-hint">Scorri per vedere gli altri →</p>
+
+    <div class="line-label">Tempur®</div>
+    <p class="tempur-note">Dispositivi medici CE di Classe I, con 10 anni di garanzia.</p>
+    <div class="models">
+      <div class="model">
+        <img src="img-sogni/tempur-pro-plus.jpg" width="520" height="520" loading="lazy" alt="Materasso Tempur PRO PLUS">
+        <div class="body"><span class="tag">Il più richiesto</span>
+          <p>Alto 25 cm, con un'accoglienza più profonda. Comodo anche per sedersi e alzarsi dal letto.</p></div>
+      </div>
+      <div class="model">
+        <img src="img-sogni/tempur-pro.jpg" width="520" height="520" loading="lazy" alt="Materasso Tempur PRO">
+        <div class="body"><span class="tag">Medium · Medium Firm · Firm</span>
+          <p>Materiale TEMPUR® Advanced, alto 21 cm. Scegli la rigidità che senti più giusta per te.</p></div>
+      </div>
+      <div class="model">
+        <img src="img-sogni/tempur-form-original.jpg" width="520" height="520" loading="lazy" alt="Materasso Tempur FORM ORIGINAL">
+        <div class="body"><span class="tag">Supporto stabile</span>
+          <p>Formula viscoelastica TEMPUR®, alto 22 cm. Sostiene di più e si affonda meno rispetto a un memory classico.</p></div>
+      </div>
+    </div>
+    <p class="swipe-hint">Scorri per vedere gli altri →</p>
+
+    <div class="cta-wrap"><a class="btn-cta" href="#form">✓ Voglio provarli in negozio</a></div>
   </section>
 
   <section id="misure">
-    <div class="sizes-box">
+    <div class="sizes">
       <h3>Materassi di ogni forma e misura</h3>
-      <p class="models-sub">Costruiamo materassi su misura per qualsiasi rete o telaio, comprese le dimensioni meno comuni</p>
+      <p>Costruiamo materassi su misura per qualsiasi rete o telaio, comprese le dimensioni meno comuni</p>
       <div class="size-grid">
-        <div class="size-chip">80 x 190/200<span>singolo</span></div>
-        <div class="size-chip">120 x 190/200<span>piazza e mezza</span></div>
-        <div class="size-chip">160 x 190/200<span>matrimoniale</span></div>
-        <div class="size-chip">170 x 200<span>matrimoniale large</span></div>
-        <div class="size-chip">180 x 200<span>king size</span></div>
-        <div class="size-chip">su misura<span>qualsiasi forma</span></div>
+        <div><strong>80 x 190/200</strong><span>singolo</span></div>
+        <div><strong>120 x 190/200</strong><span>piazza e mezza</span></div>
+        <div><strong>160 x 190/200</strong><span>matrimoniale</span></div>
+        <div><strong>170 x 200</strong><span>matrimoniale large</span></div>
+        <div><strong>180 x 200</strong><span>king size</span></div>
+        <div><strong>su misura</strong><span>qualsiasi forma</span></div>
       </div>
-      <p class="sizes-note">Hai un letto rotondo, con rete non standard o una misura particolare? Nessun problema: lo costruiamo su misura in base alla tua rete.</p>
+      <p class="small">Hai un letto rotondo, una rete non standard o una misura particolare? Lo costruiamo in base alla tua rete.</p>
     </div>
   </section>
 
   <section id="garanzia">
     <div class="warranty">
       <h3>Senza pensieri fino al 2036</h3>
-      <p>Ogni materasso Sogni &amp; Sogni è coperto da <strong>garanzia fino a 10 anni</strong>. Per qualsiasi necessità segui direttamente il nostro negozio di Piove di Sacco: nessun call center, nessun numero verde.</p>
+      <p>Ogni materasso Sogni &amp; Sogni è coperto da <strong>garanzia fino a 10 anni</strong>. Per qualsiasi necessità ti segue direttamente il nostro negozio di Piove di Sacco, senza call center e senza numeri verdi.</p>
     </div>
   </section>
 
   <section id="recensioni">
     <h2 class="reviews-title">Cosa dicono i nostri clienti</h2>
+    <p class="reviews-sub"><span class="stars">★★★★★</span> 4,7 su Google</p>
     <div class="review-card">
       <h3>Michele Nardo</h3>
       <p>"Ho comprato un materasso da Nicola e Maurizio, è da un anno che lo sto utilizzando e dormo come un ghiro! Consigliatissimo"</p>
@@ -325,17 +322,15 @@
     </div>
     <div class="review-card">
       <h3>Marika</h3>
-      <p>"Abbiamo acquistato il nostro materasso e rete matrimoniale presso questo negozio, cortesia, disponibilità e semplicità nel spiegare le varie tipologie di materassi al 🛏️🛌 . Nicola ed il fratello ci hanno indicato quale fosse l' articolo più indicato alle nostre esigenze, grazie alla loro pluriennale esperienza. Consegna veloce come da accordi. Dopo una settimana di dormite  nel nuovo materasso, sentiamo la differenza. Beh, che dire, noi lo consigliamo vivamente."</p>
+      <p>"Abbiamo acquistato il nostro materasso e rete matrimoniale presso questo negozio, cortesia, disponibilità e semplicità nel spiegare le varie tipologie di materassi al 🛏️🛌 . Nicola ed il fratello ci hanno indicato quale fosse l' articolo più indicato alle nostre esigenze, grazie alla loro pluriennale esperienza. Consegna veloce come da accordi. Dopo una settimana di dormite nel nuovo materasso, sentiamo la differenza. Beh, che dire, noi lo consigliamo vivamente."</p>
       <div class="stars">★★★★★</div>
     </div>
     <div class="review-card">
       <h3>Federico Masut</h3>
-      <p>"Buonasera volevo mettere la mia impressione  che ho avuto dell'acquisto  del mio nuovo materasso a molle con memori acquistato in negozio sogni&amp;sogni piove di sacco , circa 10 giorni di utilizzo dopo avermi abituato mi è sparito il mal di schiena lombare dalla postura mentre dormo sul fianco ,che mi era venuto fuori dal mio vecchio materasso. E grazie a l'esperienza  di Nicola e di suo fratello mi hanno consigliato  subito in base al mio peso che tipo di materasso andasse bene per me , hanno fatto centro e mi è sparito  il mal di schiena e mi sveglio alla mattina bello riposato da qui si vede la professionalità e la passione di Nicola, nel suo settore  e ve lo consiglio a tutti . Cordiali saluti."</p>
+      <p>"Buonasera volevo mettere la mia impressione che ho avuto dell'acquisto del mio nuovo materasso a molle con memori acquistato in negozio sogni&amp;sogni piove di sacco , circa 10 giorni di utilizzo dopo avermi abituato mi è sparito il mal di schiena lombare dalla postura mentre dormo sul fianco ,che mi era venuto fuori dal mio vecchio materasso. E grazie a l'esperienza di Nicola e di suo fratello mi hanno consigliato subito in base al mio peso che tipo di materasso andasse bene per me , hanno fatto centro e mi è sparito il mal di schiena e mi sveglio alla mattina bello riposato da qui si vede la professionalità e la passione di Nicola, nel suo settore e ve lo consiglio a tutti . Cordiali saluti."</p>
       <div class="stars">★★★★★</div>
     </div>
-    <div class="cta-wrap">
-      <a class="btn-cta" href="#form">✓ Prenota la tua visita</a>
-    </div>
+    <div class="cta-wrap"><a class="btn-cta" href="#form">✓ Prenota la tua visita</a></div>
   </section>
 
   <section id="faq">
@@ -345,20 +340,16 @@
       <p>No. La visita è gratuita e senza nessun obbligo d'acquisto.</p>
     </details>
     <details>
+      <summary>Avete anche materassi Tempur?</summary>
+      <p>Sì, in negozio puoi provare Tempur PRO, PRO PLUS e FORM ORIGINAL, insieme ai materassi della linea Sogni &amp; Sogni.</p>
+    </details>
+    <details>
       <summary>Quanto dura la garanzia sul materasso?</summary>
       <p>Fino a 10 anni su ogni materasso Sogni &amp; Sogni.</p>
     </details>
     <details>
-      <summary>Come funziona la rottamazione da 200 €?</summary>
-      <p>Porti in negozio il tuo vecchio materasso: lo ritiriamo noi e scali 200 € sull'acquisto di quello nuovo. Insieme al materasso ricevi topper e cuscini in omaggio.</p>
-    </details>
-    <details>
-      <summary>Il vecchio materasso deve essere di una marca particolare?</summary>
-      <p>No, ritiriamo qualsiasi materasso, di qualunque marca e misura.</p>
-    </details>
-    <details>
-      <summary>Posso pagare a rate?</summary>
-      <p>Sì, è disponibile il finanziamento a tasso zero fino a 24 mesi.</p>
+      <summary>Come funziona il regalo delle fodere?</summary>
+      <p>Prenotando la visita con il modulo qui sopra, ricevi in regalo le fodere dei cuscini quando vieni in negozio.</p>
     </details>
     <details>
       <summary>Devo prenotare prima di venire in negozio?</summary>
@@ -368,9 +359,7 @@
       <summary>Dove si trova il negozio?</summary>
       <p>A Piove di Sacco (PD), in Via S. Pio X.</p>
     </details>
-    <div class="cta-wrap">
-      <a class="btn-cta" href="#form">✓ Prenota la tua visita</a>
-    </div>
+    <div class="cta-wrap"><a class="btn-cta" href="#form">✓ Prenota la tua visita</a></div>
   </section>
 
 </div>
@@ -389,33 +378,85 @@
 </footer>
 
 <div class="sticky-bar">
-  <a class="main" href="#form">
-    <span class="icon">✓</span> Prenota e ottieni 200 € di sconto
-  </a>
+  <a href="tel:+393762265245"><span class="icon">📞</span> Chiama</a>
+  <a class="main" href="#form"><span class="icon">🎁</span> Prenota e ricevi il regalo</a>
 </div>
+
 <script>
-document.getElementById('lead-form').addEventListener('submit', function (e) {
-  e.preventDefault();
-  var form = e.target;
-  var data = {
-    nome: form.nome.value,
-    telefono: form.telefono.value,
-    email: form.email.value,
-    area_raggiungibile: document.getElementById('check-area').checked,
-    consenso_privacy: document.getElementById('check-privacy').checked,
-    pagina: window.location.href,
-    data_invio: new Date().toISOString()
-  };
-  fetch('https://hook.eu2.make.com/61vnh4mc7u2q234ttz9euyjy23a29458', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  }).catch(function (err) {
-    console.error('Invio al webhook fallito:', err);
-  }).finally(function () {
-    window.location.href = 'thank-you-sogni.html';
+(function(){
+  var WEBHOOK_URL = 'https://hook.eu2.make.com/61vnh4mc7u2q234ttz9euyjy23a29458';
+  var THANK_YOU = 'thank-you-sogni.html';
+
+  var form = document.getElementById('lead-form');
+  var btn = document.getElementById('btn-submit');
+  var errBox = document.getElementById('form-error');
+  var btnText = btn.textContent;
+
+  function getParam(name){
+    try { return new URLSearchParams(window.location.search).get(name) || ''; } catch(e){ return ''; }
+  }
+  function showError(html){ errBox.innerHTML = html; errBox.classList.add('show'); }
+  function clearError(){ errBox.classList.remove('show'); errBox.innerHTML = ''; }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    clearError();
+
+    var nome = form.nome.value.trim();
+    var telefono = form.telefono.value.trim();
+    var email = form.email.value.trim();
+    var area = document.getElementById('check-area').checked;
+    var privacy = document.getElementById('check-privacy').checked;
+
+    if (nome.length < 2) { showError('Scrivi il tuo nome e cognome.'); form.nome.focus(); return; }
+    if (telefono.replace(/\D/g,'').length < 8) { showError('Controlla il numero di telefono: ci serve per richiamarti.'); form.telefono.focus(); return; }
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('L\'email non sembra corretta. Puoi anche lasciarla vuota.'); form.email.focus(); return; }
+    if (!area) { showError('Conferma di poter raggiungere il negozio di Piove di Sacco.'); return; }
+    if (!privacy) { showError('Per inviare la richiesta serve il consenso al trattamento dei dati.'); return; }
+
+    var data = {
+      nome: nome,
+      telefono: telefono,
+      email: email,
+      area_raggiungibile: area,
+      consenso_privacy: privacy,
+      pagina: window.location.href.split('?')[0],
+      data_invio: new Date().toISOString(),
+      gclid: getParam('gclid'),
+      utm_campaign: getParam('utm_campaign'),
+      utm_term: getParam('utm_term')
+    };
+
+    btn.disabled = true;
+    btn.textContent = 'Invio in corso…';
+
+    var controller = ('AbortController' in window) ? new AbortController() : null;
+    var timer = setTimeout(function(){ if (controller) controller.abort(); }, 12000);
+
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+      keepalive: true,
+      signal: controller ? controller.signal : undefined
+    })
+    .then(function(res){
+      clearTimeout(timer);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      // Il lead è arrivato a Make: solo ora autorizziamo la conversione nella thank-you
+      try { sessionStorage.setItem('ss_lead_ok', String(Date.now())); } catch(e){}
+      try { sessionStorage.setItem('ss_lead_user', JSON.stringify({ email: email, phone: telefono })); } catch(e){}
+      window.location.href = THANK_YOU;
+    })
+    .catch(function(){
+      clearTimeout(timer);
+      btn.disabled = false;
+      btn.textContent = btnText;
+      showError('Non siamo riusciti a inviare la richiesta. Riprova tra un momento, oppure chiamaci al <a href="tel:+393762265245">376 226 5245</a>.');
+    });
   });
-});
+})();
 </script>
+
 </body>
 </html>
